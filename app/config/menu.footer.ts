@@ -1,4 +1,4 @@
-import { BLOG_PAGE_LINK } from "../utils/constants";
+// import { BLOG_PAGE_LINK } from "../utils/constants";
 import { MenuItem } from "./menuTypes";
 
 
@@ -6,7 +6,7 @@ export const quickLinks: MenuItem[] = [
   { href: { pathname: "/", hash: "card" }, labelKey: "Card" },
   { href: { pathname: "/", hash: "features" }, labelKey: "Features" },
   { href: "/referal", labelKey: "Referal" },
-  { href: BLOG_PAGE_LINK, labelKey: "Blog" },
+  // { href: BLOG_PAGE_LINK, labelKey: "Blog" },
   { href: { pathname: "/", hash: "faq" }, labelKey: "Faq" }
 ];
 
