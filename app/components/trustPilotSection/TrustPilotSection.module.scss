@@ -1,0 +1,220 @@
+@use '@/app/styles/core/variables' as *;
+
+.trustPilotSection {
+    padding-top: $main-gap-m;
+    padding-bottom: $main-gap-m;
+
+    h2 {
+        text-align: center;
+        margin: 0;
+
+        span {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            position: relative;
+            margin-left: 20px;
+
+            svg {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 70px;
+                height: 70px;
+            }
+        }
+    }
+}
+
+.trustedLogos {
+    margin: 32px auto 0 auto;
+    width: 216px;
+
+    > p {
+        margin: 0;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 16px;
+        text-transform: uppercase;
+        color: $color-grey-60;
+    }
+}
+
+.trustedLogosWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 4px;
+    row-gap: 2px;
+    margin-top: 24px;
+    justify-content: center;
+}
+
+.trustedLogo {
+    width: 50px !important;
+    height: 50px !important;
+    border: 2px solid transparent !important;
+    border-radius: 100%;
+    transition: border-color 0.3s !important;
+    margin: 0 !important;
+    background: none;
+    opacity: 1;
+    
+    img {
+        border: 2px solid transparent;
+        border-radius: 100%;
+        transition: border-color 0.3s;
+    }
+}
+
+.trustedSwiper {
+    margin-top: 32px;
+}
+
+.item {
+    padding: 24px;
+    border: 1px solid #1D1D1C;
+    background: #0E0E0E;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: scale(0.9);
+    transition: transform 0.3s;
+
+    p {
+        font-size: 16px;
+        line-height: 18px;
+        color: $color-white;
+        margin: 0;
+    }
+}
+
+.author {
+    margin-top: 48px;
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+
+    p {
+        font-size: 14px;
+        line-height: 16px;
+        text-transform: uppercase;
+        color: $color-white;
+        margin: 0;
+    }
+
+    .authorText {
+        margin-top: 2px;
+        color: $color-grey-60;
+    }
+
+}
+
+.itemImage {
+    width: 50px;
+    height: 50px;
+}
+
+@media only screen and (min-width: $break-point-tablet) {
+    .trustedLogos {
+        width: 398px;
+    } 
+}
+
+@media only screen and (min-width: $break-point-small) {
+    .trustPilotSection {
+        padding-top: $main-gap-n;
+        padding-bottom: $main-gap-n;
+
+        h2 {
+            span {
+                width: 50px;
+                height: 50px;
+                margin-left: 10px;
+
+                svg {
+                    width: 80px;
+                    height: 80px;
+                }
+            }
+        }
+    }
+
+    .trustedLogos {
+        margin: 40px auto 0 auto;
+
+        > p {
+            font-size: 16px;
+            font-weight: 18px;
+        }
+        
+    }
+
+    .trustedLogo {
+        width: 52px !important;
+        height: 52px !important;
+    }
+
+    .item {
+        p {
+            font-size: 18px;
+            line-height: 20px;
+        }
+    }
+
+    .author {
+        p {
+            font-size: 16px;
+            line-height: 18px;
+        }   
+        
+        .authorText {
+            margin-top: 4px;
+        }
+    }
+}
+
+@media only screen and (min-width: $break-point-normal) {
+    .trustedSwiper {
+        margin-top: 60px;
+    }
+
+    .item {
+        p {
+            font-size: 20px;
+            line-height: 22px;
+        }
+    }
+
+    .author {
+        margin-top: 64px;
+    }
+}
+
+@media only screen and (min-width: $break-point-full-style) {
+    .trustPilotSection {
+        h2 {
+            span {
+                width: 70px;
+                height: 70px;
+
+                svg {
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+        }
+
+    }
+
+    .trustedLogos {
+        margin: 60px auto 0 auto;   
+    }
+
+    .item {
+        p {
+            font-size: 24px;
+            line-height: 26px;
+        }
+    }
+}

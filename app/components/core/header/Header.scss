@@ -1,0 +1,133 @@
+@use '@/app/styles/core/variables' as *;
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 58px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px);
+    z-index: 100;
+    transition: background 0.3s;
+
+    .m-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    &.header--white {
+        background: $color-white;
+        backdrop-filter: blur(0);
+
+        .path {
+            fill: $color-black;
+        }
+
+        .lang-menu {
+            color: $color-black;
+        }
+
+        .lang-menu {
+            &.active {
+                .lang-menu__active {
+                    background: rgba(28, 20, 20, 0.1);
+                }  
+            }
+        }
+
+        .s-button {
+            border-color: $color-black;
+            background-color: $color-black;
+            color: $color-white;
+        }
+    }
+
+    &.header--black {
+        background: rgba(0, 0, 0, 0.1);  
+
+        .lang-menu {
+            color: $color-white;
+        }
+
+        .lang-menu {
+            &.active {
+                .lang-menu__active {
+                    background: rgba(28, 20, 20, 0.1);
+                }  
+            }
+        }
+    }
+
+    .text-button {
+        display: none;
+    }
+}
+
+.header__center-part {
+    display: none;
+}
+
+.header__right-part {
+    display: flex;
+    column-gap: 8px;
+}
+
+@media only screen and (min-width: $break-point-small) {
+    .header {
+        height: 72px;
+
+        .menu-section-button {
+            display: none;
+        }
+
+        .text-button {
+            display: flex;
+        }
+    }
+
+    .header__left-part {
+        width: 15%;
+    }
+
+    .header__center-part {
+        display: flex;
+        justify-content: center;
+    }
+
+    .header__right-part {
+        width: 15%;
+        justify-content: flex-end;
+    }
+
+    .main-menu {
+        display: flex;
+        justify-content: center;
+        column-gap: 16px;
+
+        a {
+            font-size: 16px;
+            line-height: 18px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: $color-grey-60;
+        }
+    }
+
+}
+
+@media only screen and (min-width: $break-point-medium) {
+    .main-menu {
+        column-gap: 24px;
+    }
+}
+
+
+
+@media only screen and (min-width: $break-point-full-style) {
+    .main-menu {
+        column-gap: 32px;
+    }
+}

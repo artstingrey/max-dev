@@ -1,0 +1,366 @@
+@use '@/app/styles/core/variables' as *;
+
+.footer {
+    padding-left: 8px;
+    padding-right: 8px;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.topPart {
+    border: 1px solid $color-black90;
+    // background: #0E0E0E;
+}
+
+.linkPart {
+    padding: 24px;
+    position: relative;
+    max-width: 1299px;
+
+    p {
+        margin: 96px 0 0 0;
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 50px;
+        letter-spacing: -1px;
+
+        a {
+            color: $color-white;
+            text-decoration: underline;
+        }
+    }
+}
+
+.footerPorfolioPart {
+    display: none;
+}
+
+.rowIcon {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 34px;
+    height: 34px;
+}
+
+.bottomPart {
+    border: 1px solid $color-black90;
+    border-top: 0;
+}
+
+.footerMenuPart {
+    padding: 32px 24px;
+    max-width: 1299px;
+
+    .termsPart {
+        display: none;
+    }
+}
+
+.footerContacts {
+    display: flex;
+    justify-content: space-between;    
+}
+
+.footerMenu {
+    li {
+        margin-top: 16px;
+
+        &:first-child {
+            margin: 0;
+        }
+    }
+
+    a {
+        font-size: 14px;
+        line-height: 16px;
+        text-transform: uppercase;
+        color: $color-grey-70;
+        text-decoration: none;
+
+        span {
+            display: none;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.contactIcons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    a {
+        margin-top: 16px;
+
+        &:first-child {
+            margin: 0;
+        }
+    }
+}
+
+.footerMailLink {
+    display: none;
+}
+
+.footerLogoPart {
+    border: 1px solid $color-black90;
+    border-top: 0;    
+    padding: 32px 24px;
+}
+
+.termsPart {
+    margin-top: 48px;
+}
+
+.termsLinks {
+    display: flex;
+    justify-content: space-between;
+
+    a {
+        font-size: 14px;
+        line-height: 16px;
+        text-transform: uppercase;
+        color: $color-grey-80;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.copy {
+    margin: 14px 0 0 0;
+    font-size: 14px;
+    line-height: 16px;
+    color: $color-grey-80;
+}
+
+.mailDelimiter {
+    display: none;
+}
+
+@media only screen and (min-width: $break-point-tablet) {
+    .linkPart {
+        p {
+            font-size: 60px;
+            line-height: 62px;
+        }
+    }
+    
+}
+
+@media only screen and (min-width: $break-point-small) {
+    .footer {
+        padding-left: 24px;
+        padding-right: 24px;
+    }  
+    
+    .topPart {
+        display: flex;
+        height: 300px;
+    }
+
+    .linkPart {
+        width: 65%;
+        border-right: 1px solid $color-black90;
+        display: flex;
+        align-items: flex-end;
+
+        p {
+            margin: 0;
+
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .footerPorfolioPart {
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 35%;
+    }
+
+    .footerPorfolioPartBottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    
+        p {
+            margin: 0;  
+            font-size: 30px;
+            font-weight: 500;
+            line-height: 32px;  
+        }
+    }
+
+    .bottomPart {
+        height: 300px;
+        display: flex;
+    }
+
+    .footerMenuPart {
+        width: 65%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .termsPart {
+            display: flex;
+        }
+    }
+
+    .footerLogoPart {
+        width: 35%;
+    }
+
+    .footerMenu {
+        li {
+            margin-top: 8px;
+            display: flex;
+
+            &:first-child {
+                margin: 0;
+            }
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            line-height: 18px;
+            column-gap: 10px;
+            transition: color 0.3s;
+
+            span {
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 32px;
+                height: 32px;
+                background: rgba(140, 140, 140, 0.2);
+                border-radius: 100%;
+                transform: scale(0) rotate(-45deg);
+                transition: transform 0.3s ease-out;
+
+                svg {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+
+            &:hover {
+                color: $color-white;
+                text-decoration: none;
+
+                span {
+                    transform: scale(1) rotate(0);
+                }
+            }
+        }
+    }
+    
+    .contactIcons {
+        flex-direction: row;
+        column-gap: 24px;
+        align-items: center;
+
+        a {
+            margin: 0;
+            display: none;
+            background: none;
+            border: 0;
+            padding: 0;
+        }
+
+        .footerMailLink {
+            display: flex;
+        }
+    }
+
+    
+
+    .mailDelimiter {
+        display: block;
+        width: 1px;
+        height: 40px;
+        background: #1D1D1C;
+    }
+
+    .footerContacts {
+        align-items: flex-start;
+    }
+
+    .termsPart {
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    .copy {
+        margin: 0;
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    .termsLinks {
+        display: block;
+
+        a {
+            display: block;
+            margin-top: 8px;
+            font-size: 16px;
+            line-height: 18px;
+
+            &:first-child {
+                margin: 0;
+            }
+        }
+    }
+
+    .footerLogoPart {
+        display: flex;
+        align-items: flex-end;
+
+        .termsPart {
+            display: none;
+        }
+    }
+}
+
+@media only screen and (min-width: $break-point-medium) {
+   
+}
+
+@media only screen and (min-width: $break-point-normal) {
+    .footer {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}
+
+@media only screen and (min-width: $break-point-full-style) {
+    .footer {
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+
+    .topPart {
+        height: 400px;
+    }
+
+    .linkPart {
+        p {
+            font-size: 90px;
+            line-height: 92px;
+        }
+    }
+}

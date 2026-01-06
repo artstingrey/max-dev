@@ -1,0 +1,88 @@
+@use '@/app/styles/core/variables' as *;
+
+.fixedSection {
+    position: relative;
+    padding-left: $main-padding-m;
+    padding-right: $main-padding-m;
+    padding-top: 150px;
+    padding-bottom: 150px;
+
+    h2 {
+        font-size: 60px;
+        line-height: 62px;
+        text-align: center;
+        margin: 0;
+    }
+
+    p {
+        margin: 32px 0 0 0;
+        text-align: center;
+    }
+
+    a {
+        width: 250px;
+        margin: 48px auto 0 auto;
+    }
+}
+
+.fixedSectionWrapper {
+    position: relative;
+    z-index: 10;
+}
+
+@media only screen and (min-width: $break-point-tablet) {
+
+    .fixedSection {
+        h2 {
+            margin: 0;
+        }
+    }
+
+    .fixedSectionWrapper {
+        max-width: 800px;
+    }
+}
+
+@media only screen and (min-width: $break-point-small) {
+    .fixedSection {
+        h2 {
+            font-size: 70px;
+            line-height: 72px;
+            margin: 0;
+        }
+    }
+    
+    .fixedSection {
+        height: 700px;
+        padding-top: 0;
+        padding-bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        a {
+            width: 250px;
+            margin: 60px auto 0 auto;
+        }
+    }
+}
+
+@media only screen and (min-width: $break-point-normal) {
+    .fixedSection {
+        h2 {
+            font-size: 80px;
+            line-height: 82px;
+            margin: 0;
+        }
+    }
+}
+
+@media only screen and (min-width: $break-point-full-style) {
+    .fixedSection {
+        h2 {
+            font-size: 90px;
+            line-height: 92px;
+            margin: 0;
+        }
+    }
+}

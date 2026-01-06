@@ -1,0 +1,409 @@
+@use './variables' as *;
+
+.button-wrap {
+    display: flex;
+}
+
+.button-wrap--center {
+    justify-content: center;
+}
+
+.button-wrap--m-center {
+    justify-content: center;
+}
+
+.icon-hover {
+    transition: fill 0.3s;   
+}
+
+button {
+    display: block;
+    border: none;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+}
+
+.s-button {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    background-color: $color-black-transparent;
+    height: 70px;
+    padding-left: 10px;
+    padding-right: 26px;
+    padding-bottom: 6px;
+    min-width: 94px;
+    text-decoration: none;
+    position: relative;
+    transition: background-color 0.3s, color 0.3s, opacity 0.3s;
+    color: $color-white;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 18px;
+    opacity: 1;
+
+    &:hover {
+       
+    }
+
+    &:focus {
+        
+    }
+
+    &:disabled {
+        opacity: 0.5;
+    }
+
+    &.s-button--small { 
+        height: 44px;
+        padding-left: 10px;
+        padding-right: 18px; 
+        font-size: 14px;
+        line-height: 16px; 
+        
+        &.s-button--icon {
+            .icon {
+                width: 8px;
+                height: 8px;
+            }
+        }
+    }
+
+    &.s-button--very-small {
+        height: 40px;
+        border-radius: 83px;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-size: 12px;
+        line-height: 14px;
+
+        &.s-button--icon {
+            .icon {
+                position: relative;
+                top: 6px;
+                right: 6px;
+                width: 14px;
+                height: 14px;
+            }
+        }
+
+    }
+
+    &.s-button--white { 
+        background-color: $color-white;
+        color: $color-black;
+
+        &:hover {
+            background-color: rgba(255,255,255, 0.6);  
+        }   
+
+        &:focus {
+            background-color: rgba(255,255,255, 0.4);    
+        }
+    }
+
+    &.s-button--grey {
+
+        &:hover {
+           
+        }
+    }
+
+    &.s-button--light-grey {
+        background: #F5F5F5;
+        color: #5229C5;
+
+        &:hover {
+            opacity: 0.6;    
+        }
+    }
+
+    &.s-button--yellow {
+        background: #CEFF46;
+        color: $color-black;
+    }
+
+    &.s-button--icon {
+        .icon {
+            display: block;
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            width: 14px;
+            height: 14px;
+        }
+    }
+}
+
+.s-round-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    
+    svg {
+        display: block;
+        width: 14px;
+        height: 14px;
+    }
+
+    &:hover {
+          
+    }
+
+    &:disabled {
+        opacity: 0.7;
+        filter: drop-shadow(0px 0px 4px #D1F249);
+    }
+}
+
+.s-read-more {
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration: none;
+    transition-duration: .2s;
+
+    span {
+        display: block;
+    }
+
+    &:hover {
+        .span {
+            animation: slide-right .6s ease-out both;
+        }
+    }
+}
+
+.text-button {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    padding: 4px;
+    column-gap: 8px;
+    font-size: 16px;
+    line-height: 18px;
+    color: $color-white;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+
+    .icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.google-play {
+    display: block;
+    width: 75px;
+    height: 29px;
+}
+
+.apple-store {
+    display: block;
+    width: 72px;
+    height: 34px;
+}
+
+.apple-store-bordered {
+    width: 90px;
+    height: 48px;
+}
+
+.google-store-bordered {
+    width: 95px;
+    height: 48px;
+}
+
+.s-button-load {
+    border-radius: 100px;
+    height: 46px;
+    padding: 2px;
+    background-color: rgba(206, 255, 70, 0.35);
+    text-decoration: none;
+
+    .s-button-load__inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        border-radius: 100px;
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(7px);
+        padding-right: 22px;
+        padding-left: 22px;
+        position: relative;
+        overflow: hidden;
+
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 16px;
+        color: #000000;
+    }
+
+    .button-load {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        will-change: width;
+        animation: none;
+        background: #CEFF46;
+    }
+
+    span {
+        position: relative;
+        z-index: 1;
+    }
+
+    &.active {
+        .button-load {
+            animation: stepAnimation 5s linear forwards;
+        }
+    }
+}
+
+.menu-section-button {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-black-transparent;
+    transition: background-color 0.3s;
+
+    svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.s-button-close {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(140, 140, 140);
+
+    svg {
+        display: block;
+        width: 11px;
+        height: 11px;
+    }
+}
+
+.contact-button {
+    width: 48px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(140, 140, 140, 0.2);
+    
+    .icon {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media only screen and (min-width: $break-point-small) {
+    .button-wrap--m-center {
+        justify-content: flex-start;
+    }
+
+    .s-button {
+        height: 54px;
+        padding-left: 10px;
+        padding-right: 38px;
+        font-size: 18px;
+        line-height: 20px; 
+
+        &.s-button--very-small {
+            height: 48px;
+            border-radius: 100px;
+            padding-left: 19px;
+            padding-right: 19px;
+            font-size: 16px;
+            line-height: 18px; 
+
+            &.s-button--icon {
+                column-gap: 8px;
+
+                .icon {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+        }
+
+        &.s-button--icon {
+            .icon {
+                width: 10px;
+                height: 10px;
+            }
+        }
+    
+    }
+
+    .google-play, .app-store {
+        width: 176px;
+        height: 54px;
+    }
+
+    .s-button-load {
+        border-radius: 100px;
+        height: 56px;
+        padding: 3px;
+
+        .s-button-load__inner {
+            font-size: 18px;
+            line-height: 20px;
+            padding-left: 28px;
+            padding-right: 28px;
+        }
+    }
+
+    .s-button-close {
+        width: 50px;
+        height: 50px;
+
+        svg {
+            width: 12px;
+            height: 12px;
+        }
+    }
+
+
+}
+
+@media only screen and (min-width: $break-point-full-style) {
+    .s-button {
+        height: 56px;   
+        font-size: 18px;
+        line-height: 20px; 
+        padding-left: 32px;
+        padding-right: 32px;
+
+        &.s-button--small { 
+            height: 48px;
+            padding-left: 24px;
+            padding-right: 24px; 
+            font-size: 16px;
+            line-height: 18px;    
+        }
+    }
+
+    .google-play, .app-store {
+        width: 227px;
+        height: 70px;
+    }
+}

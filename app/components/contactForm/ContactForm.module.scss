@@ -1,0 +1,150 @@
+@use '@/app/styles/core/variables' as *;
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    transition: opacity 0.3s;
+    pointer-events: none;
+
+    &.active {
+        z-index: 110;
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+.formButtonCloseD {
+    display: none;
+}
+
+.contactFormWrapper {
+    position: relative;
+    padding: 40px 20px;
+    background: $color-black;
+    border: 1px solid #1D1D1C;
+    overflow: auto;
+
+    h2 {
+        margin: 0;
+        font-size: 48px;
+        line-height: 50px;
+        letter-spacing: -1;
+    }
+}
+
+.contactFormGap {
+    margin-top: 40px;
+}
+
+.contactFormDesc {
+    margin: 24px 0 0 0;
+}
+
+.form {
+    margin-top: 40px;
+}
+
+.contactFormSection {
+    margin-top: 40px;
+}
+
+.contactFormSectionTitle {
+    display: flex;
+    column-gap: 8px;
+    font-size: 14px;
+    color: $color-white;
+    text-transform: uppercase;
+    margin: 0 0 24px 0;
+
+    .icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.contactFormChecboxes {
+    margin-top: 24px;
+    display: flex;
+    column-gap: 32px;
+    row-gap: 14px;
+    flex-wrap: wrap;
+}
+
+.contactFormRadio {
+    width: 90%;
+    margin-top: 32px;
+}
+
+.buttonWrap {
+    margin-top: 40px;
+    
+    button {
+        width: 100%;
+    }
+}
+
+.or {
+    font-size: 18px;
+    line-height: 20px;
+    color: $color-grey-70;
+    text-align: center;
+    margin: 0;
+}
+
+.orButtons {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (min-width: $break-point-tablet) {
+
+    .contactFormWrapper {
+        padding: 60px 40px;
+    }
+
+    .contactFormContent {
+        max-width: 590px;
+    }
+
+    .orButtons {
+        flex-direction: row;
+        a {
+            width: 50%;
+        }
+    }
+}
+
+@media only screen and (min-width: $break-point-small) {
+    .contactFormRadio {
+        width: 100%;
+    }
+
+    .overlay {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .contactFormWrapper {
+        width: 50%;
+    }
+
+    .formButtonCloseM {
+        display: none;
+    }
+
+    .formButtonCloseD {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

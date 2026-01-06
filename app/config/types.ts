@@ -1,0 +1,26 @@
+export type PictureSource = {
+    srcSet: string; 
+    media?: string;      
+    type?: string;       
+};
+
+export type BaseImage = {
+  src: string;        
+  width: number;
+  height: number;
+  alt: string;
+};
+
+export type SButtonType = {
+  text: string;
+  url?: string;
+  icon?: boolean;
+  className?: string;
+  type?: 'button' | 'submit';
+  typeLink?: 'normal' | 'link';
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+};
+
+export type ExternalClassNameProps = {
+  className?: string;
+};

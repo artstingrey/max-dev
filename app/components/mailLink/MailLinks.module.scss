@@ -1,0 +1,20 @@
+@use '@/app/styles/core/variables' as *;
+
+.orButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 56px;
+    border: 1px solid $color-black90;
+    background: #0E0E0E;
+    column-gap: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    color: $color-white;
+    text-decoration: none;
+
+    .icon {
+        width: 32px;
+        height: 32px;
+    }
+}

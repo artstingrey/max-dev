@@ -1,0 +1,95 @@
+@use '@/app/styles/core/variables' as *;
+
+.whatWeDoSection {
+    padding-top: $main-gap-s;
+    padding-bottom: $main-gap-s;
+    padding-left: $main-padding-m;
+    padding-right: $main-padding-m;
+
+    h2 {
+        margin: 0;
+    }
+}
+
+.titleSection {
+    margin-top: 32px;
+    position: relative;
+
+    > p {
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 60px;
+        letter-spacing: -1px;
+        text-align: center;
+        margin: 0;
+    }
+}
+
+.titleRunningLine {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+
+    p {
+        white-space: nowrap; 
+        margin: 0;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 20px;
+    }
+}
+
+@media only screen and (min-width: $break-point-small) {
+    .whatWeDoSection {
+        padding-top: $main-gap-n;
+        padding-bottom: $main-gap-n;
+        padding-left: 0;
+        padding-right: 0;
+    }  
+    
+    .titleSection {
+        > p {
+            font-size: 60px;
+            line-height: 74px;
+        }
+
+        &:hover {
+            .titleRunningLine {
+                opacity: 1;
+                z-index: 10;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $break-point-normal) {
+    .titleSection {
+        > p {
+            font-size: 90px;
+            line-height: 104px;
+        }
+    }
+}
+
+@media only screen and (min-width: $break-point-full-style) {
+    .whatWeDoSection {
+        padding-top: $main-gap-l;
+        padding-bottom: $main-gap-l;
+    }
+
+    .titleSection {
+        > p {
+            font-size: 132px;
+            line-height: 144px;
+        }
+    }
+
+    .titleRunningLine {
+        height: 70px;
+    }
+}

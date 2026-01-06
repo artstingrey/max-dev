@@ -1,0 +1,57 @@
+@use '@/app/styles/core/variables' as *;
+
+.textSection {
+    padding-top: $main-gap-s;
+    padding-bottom: $main-gap-s;
+    padding-left: $main-padding-m;
+    padding-right: $main-padding-m;
+}
+
+.textSectionWrapper {
+    background: #0E0E0E;
+    border: 1px solid $color-black90;
+    padding: 32px;
+    max-width: 806px;
+    margin: 0 auto;
+
+    h3 {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 34px;
+        text-align: center;
+    }
+}
+
+.button {
+    margin-top: 32px;
+    width: 100%;
+}
+
+@media only screen and (min-width: $break-point-small) {
+    .textSection {
+        padding-top: $main-gap-m;
+        padding-bottom: $main-gap-m;
+    }
+
+    .textSectionWrapper {
+         h3 {
+            font-size: 40px;
+            line-height: 42px;
+        }
+    }
+   
+
+    .button {
+        margin-top: $main-gap-s;
+        width: auto;
+    }
+}
+
+@media only screen and (min-width: $break-point-full-style) {
+    .textSectionWrapper {
+        h3 {
+            font-size: 48px;
+            line-height: 50px;
+        }
+    }
+}
