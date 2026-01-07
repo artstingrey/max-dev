@@ -78,7 +78,7 @@ export default function WhatWeDoSection () {
     ];
 
     return (
-        <section className={styles.whatWeDoSection}>
+        <section id="services" className={styles.whatWeDoSection}>
             <h2 className="flex--center"><span className="subtitle">What We Do</span></h2>
             {titleSectionProps.map((item) => {
                 return <WhatWeDoTitleSection key={crypto.randomUUID()} title={item.title} lineText={item.lineText}/>

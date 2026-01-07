@@ -1,6 +1,7 @@
 import clsx from 'clsx';
-import styles from './Hero.module.scss';
 import SButton from '../core/buttons/sButton';
+import Link from 'next/link';
+import styles from './Hero.module.scss';
 
 export default function Hero () {
     return (
@@ -30,7 +31,7 @@ export default function Hero () {
                         <h1>From Idea to<br/> MVP in Months, Not Years</h1>
                         <div className={styles.heroButtons}>
                             <SButton text='Let’s Talk' icon={true} />
-                            <button className={styles.heroButton}>
+                            <Link href="#projects" className={styles.heroButton}>
                                 Explore Projects
                                 <span className={clsx(styles.icon, "svg")}>
                                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,7 +44,7 @@ export default function Hero () {
                                         </g>
                                     </svg>
                                 </span>
-                            </button>
+                            </Link>
                         </div>
                         <div className={styles.heroTitleDesctop}>
                             <svg width="1776" height="294" viewBox="0 0 1776 294" fill="none" xmlns="http://www.w3.org/2000/svg">

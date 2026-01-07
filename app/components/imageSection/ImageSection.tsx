@@ -117,7 +117,7 @@ export default function ImageSection () {
     }, []);
 
     return (
-        <section className={clsx(styles.portfolioSection, 'm-container')}>
+        <section id="projects" className={clsx(styles.portfolioSection, 'm-container')}>
             <div className={styles.portfolioHeader}>
                 <p className="subtitle">featured works</p>
                 <h2>Proven by founders.<br /> Backed by results.</h2>

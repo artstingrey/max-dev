@@ -5,7 +5,7 @@ import styles from './HowWeWork.module.scss';
 
 export default function HowWeWork () {
     return (
-        <section className={styles.textSection}>
+        <section id="how-we-work" className={styles.textSection}>
             <h2 className="flex--center"><span className="subtitle">Clear stages. Predictable outcomes.</span></h2>
             <div className={styles.textSectionContainer}>
                 <div className={clsx(styles.howWeWorkText,'svg')}>

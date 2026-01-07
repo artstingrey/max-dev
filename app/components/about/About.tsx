@@ -6,7 +6,7 @@ export default function About () {
         <section className={clsx(styles.aboutSection, 'm-container')}>
             <div className={styles.aboutWrapper}>
                 <h2>About</h2>
-                <div className={styles.decorationTop}>
+                <div className={clsx("svg", styles.decorationTop)}>
                     <svg width="1" height="200" viewBox="0 0 1 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="1" height="200" fill="url(#paint0_linear_38_2341)"/>
                         <defs>
@@ -123,7 +123,17 @@ export default function About () {
                             <p>Digital founders without dev teams</p>
                         </div>
                     </div>
-
+                </div>
+                <div className={clsx("svg", styles.decorationBottom)}>
+                    <svg width="1" height="200" viewBox="0 0 1 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="1" height="200" transform="matrix(1 0 0 -1 0 200)" fill="url(#paint0_linear_38_2364)"/>
+                        <defs>
+                        <linearGradient id="paint0_linear_38_2364" x1="0.5" y1="0" x2="0.5" y2="200" gradientUnits="userSpaceOnUse">
+                        <stop stopColor="white"/>
+                        <stop offset="0.857865" stopColor="white" stopOpacity="0"/>
+                        </linearGradient>
+                        </defs>
+                    </svg>
                 </div>
             </div>
         </section>

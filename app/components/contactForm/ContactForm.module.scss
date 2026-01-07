@@ -9,7 +9,7 @@
     z-index: -1;
     opacity: 0;
     background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(4px);
     transition: opacity 0.3s;
     pointer-events: none;
 
@@ -21,7 +21,7 @@
 }
 
 .formButtonCloseD {
-    display: none;
+    display: none !important;
 }
 
 .contactFormWrapper {
@@ -136,12 +136,14 @@
         width: 50%;
     }
 
-    .formButtonCloseM {
-        display: none;
+    .contactFormContent {
+        .formButtonCloseM {
+            display: none;
+        }
     }
 
     .formButtonCloseD {
-        display: flex;
+        display: flex !important;
         position: absolute;
         top: 50%;
         right: 50%;

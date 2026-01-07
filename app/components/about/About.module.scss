@@ -19,8 +19,14 @@
 .decorationTop {
     width: 1px;
     height: 150px;
-    margin: 12px auto 0 auto;
+    margin: 12px auto 30px auto;
 }   
+
+.decorationBottom {
+    width: 1px;
+    height: 150px;
+    margin: 12px auto 0 auto;   
+}
 
 .aboutText {
     font-size: 28px;
@@ -149,7 +155,7 @@
         width: 84%;
     }
 
-    .decorationTop {
+    .decorationTop, .decorationBottom {
         width: 1px;
         height: 200px;
     }   

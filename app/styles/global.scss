@@ -451,7 +451,7 @@ picture {
     overflow: hidden;
     display: flex;
 	height: 50px;
-
+	mask-image: linear-gradient(to right,transparent 0,black 100px,black calc(100% - 100px),transparent 100%);
     &:hover {
         .running-line-wrap {
             animation-play-state: paused;
@@ -739,7 +739,8 @@ picture {
 
 .shiny-text {
 	color: #8C8C8C;
-	background: linear-gradient(to right, #4d4d4d 0, white 10%, #4d4d4d 20%);
+	background: linear-gradient(90deg, #4d4d4d 0, white 50%, #4d4d4d 100%);
+	background-size: 200% 100%;
 	background-position: 0;
   	-webkit-background-clip: text;
   	-webkit-text-fill-color: transparent;
@@ -751,17 +752,12 @@ picture {
 }
 
 @keyframes shine  {
-	0% {
-		background-position: 0;		
-  	}
-    
-  	60% {
-		background-position: 100%;
-  	}
-
-  	100% {
-		background-position: 200px;
-  	}
+	from {
+		background-position: 200% 0%;
+	}
+	to {
+		background-position: -200% 0%;
+	}
 }
 
 .trust-pilot-pagination {
@@ -920,6 +916,10 @@ picture {
 			height: 12px;
 			left: 4px;
 		}
+	}
+
+	.running-line {
+		mask-image: linear-gradient(to right,transparent 0,black 200px,black calc(100% - 200px),transparent 100%);	
 	}
 }
 

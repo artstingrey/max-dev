@@ -13,17 +13,17 @@ export default function Footer() {
     const year = new Date().getFullYear();
 
     return (
-        <footer className={styles.footer}>
+        <footer id="contact" className={styles.footer}>
             <div className={styles.topPart}>
-                <div className={styles.linkPart}>
-                    <p>Want to see<br/>your idea live?<br/> <a href="#">Let’s talk.</a></p>
+                <div className={clsx(styles.linkPart, styles.footerHoverPart)}>
+                    <p>Want to see<br/>your idea live?<br/> <a href="#" className={styles.footerHoverPartLink}><span className="">Let’s talk.</span></a></p>
                     <span className={clsx("svg", styles.rowIcon)} >
                         <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3.66154 34L0 30.3385L25.1077 5.23077H2.61538V0H34V31.3846H28.7692V8.89231L3.66154 34Z" fill="white"/>
                         </svg>
                     </span>
                 </div>
-                <div className={styles.footerPorfolioPart}>
+                <div className={clsx(styles.footerHoverPart, styles.footerPorfolioPart)}>
                     <div className="subtitle">maxdev portfolio</div>
                     <div className={styles.footerPorfolioPartBottom}>
                         <p>See Our Work<br/> in Action</p>
