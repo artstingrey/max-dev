@@ -1,6 +1,7 @@
 .scrambleText {
     display: inline-block;
     position: relative;
+    //white-space: pre-wrap;
 }
 
 .scrambleTextChar {
@@ -13,17 +14,17 @@
 }
 
 .scrambleTextCharW0 {
-  width: 0.40em;
+  width: 0.35em;
 }
 
 .scrambleTextCharW1 {
-  width: 0.50em;
+  width: 0.45em;
 }
 
 .scrambleTextCharW2 {
-  width: 0.60em;
+  width: 0.55em;
 }
 
 .scrambleTextCharW3 {
-  width: 0.70em;
+  width: 0.65em;
 }

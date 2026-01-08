@@ -1,5 +1,5 @@
 'use client';
-import React, {useEffect, useMemo, useState, HTMLAttributes, MouseEvent} from "react";
+import React, {useEffect, useMemo, useState, HTMLAttributes, MouseEvent, useRef, useCallback, useLayoutEffect} from "react";
 import clsx from "clsx";
 import styles from "./ScrambleText.module.scss";
 
@@ -54,7 +54,7 @@ function classNameWidth (index: number = 1) {
         break;
 
         default:
-            style = styles.scrambleTextCharW1;
+            style = styles.scrambleTextCharW0;
         break;
     }
 
@@ -72,10 +72,10 @@ type ScrambleTextProps = Omit<HTMLAttributes<HTMLSpanElement>,"children"> & {
   colors?: string[];
 };
 
+
 export function ScrambleText({text, active, stepDelay = 40, glitchFraction = 0.3, duration = 400, mixChance = 0.9, colors = DEFAULT_COLORS, className, onMouseEnter, onMouseLeave, ...spanProps}:ScrambleTextProps) {
     const [hovered, setHovered] = useState(false);
     const isActive = active ?? hovered;
-
     const baseChars = useMemo(() => text.split(''),[text]);
 
     const widthGroups = useMemo(() => {
@@ -84,9 +84,47 @@ export function ScrambleText({text, active, stepDelay = 40, glitchFraction = 0.3
 
     const [display, setDisplay] = useState<ScrambleCharState[] | null>(null);
 
+    const charRefs = useRef<Array<HTMLSpanElement | null>>([]);
+    // посчитанные ширины (px) на каждый символ
+    const [charWidths, setCharWidths] = useState<number[] | null>(null);
+
     useEffect(() => {
         setDisplay(null);
+        setCharWidths(null);
     }, [text]);
+
+     const measureWidths = useCallback(() => {
+        // меряем именно текущие DOM-спаны
+        const widths = baseChars.map((_, i) => {
+        const el = charRefs.current[i];
+        if (!el) return 0;
+        // getBoundingClientRect стабильнее, чем offsetWidth при трансформациях/сабпикселях
+        return el.getBoundingClientRect().width;
+        });
+
+        // если все 0 — значит DOM ещё не готов
+        const hasAny = widths.some((w) => w > 0);
+        if (hasAny) setCharWidths(widths);
+    }, [baseChars]);
+
+    useLayoutEffect(() => {
+        // 1) после первого рендера
+        measureWidths();
+
+        // 2) когда догрузятся шрифты (если есть)
+        // чтобы ширины пересчитались под финальный font-face
+        // (в Safari document.fonts может быть undefined — проверяем)
+        const fonts = document.fonts;
+        if (fonts?.ready) {
+        fonts.ready.then(() => {
+            // requestAnimationFrame на всякий, чтобы дождаться рефлоу
+            requestAnimationFrame(measureWidths);
+        });
+        } else {
+        // fallback: ещё один кадр
+            requestAnimationFrame(measureWidths);
+        }
+    }, [measureWidths]);
 
     useEffect(() => {
         if (!isActive) {
@@ -169,21 +207,35 @@ export function ScrambleText({text, active, stepDelay = 40, glitchFraction = 0.3
     const charsToRender: ScrambleCharState[] = display ?? baseChars.map((c) => ({ char: c }));
 
     return (
-    <span className={clsx(styles.scrambleText, className)} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} {...spanProps}>
-        {charsToRender.map((item, index) => (
-        <span
-          key={index}
-          className={clsx(
-            styles.scrambleTextChar,classNameWidth(widthGroups[index])
-          )}
-          style={
-             item.color || item.opacity !== undefined
-              ? { color: item.color, opacity: item.opacity }
-              : undefined
-          }
-        >
-          {item.char}
-        </span>
-      ))}
-    </span>);
+    <span
+      className={clsx(styles.scrambleText, className)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      {...spanProps}
+    >
+      {charsToRender.map((item, index) => {
+        const isSpace = item.char === " ";
+        const renderedChar = isSpace ? "\u00A0" : item.char;
+
+        return (
+          <span
+            key={index}
+            ref={(el) => {
+              charRefs.current[index] = el;
+            }}
+            className={styles.scrambleTextChar}
+            style={{
+              // фиксируем ширину каждого символа в px (как в vanilla)
+              width: charWidths?.[index] ? `${charWidths[index]}px` : undefined,
+              ...(item.color || item.opacity !== undefined
+                ? { color: item.color, opacity: item.opacity }
+                : null),
+            }}
+          >
+            {renderedChar}
+          </span>
+        );
+      })}
+    </span>
+    );
 }
