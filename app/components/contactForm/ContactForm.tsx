@@ -13,6 +13,7 @@ export default function ContactForm () {
     const close = useContactFormStore((s) => s.close);
 return (
     <div className={clsx(styles.overlay, isOpen && styles.active)} aria-hidden={!isOpen}>
+        <div className={styles.closeOverlay} onClick={close}></div>
         <SButtonClose className={styles.formButtonCloseD} onClick={close}/>
         <div className={styles.contactFormWrapper}>
             <div className={styles.contactFormContent}>

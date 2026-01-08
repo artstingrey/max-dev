@@ -47,24 +47,13 @@
     justify-content: center;
     row-gap: 16px;
     width: 100%;
+    overflow: hidden;
 }
 
 .circleItem {
     position: relative;
     width: 308px;
     height: 308px;
-
-    &:first-child {
-        .circle {
-            transform: rotate(-90deg);
-        }    
-    }
-    
-    &:last-child {
-        .circle {
-            transform: rotate(90deg);
-        }
-    }
 }
 
 .circle {
@@ -75,7 +64,8 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    // animation: circleAnimation 3s linear infinite reverse;
+    animation: circleAnimation 4s linear infinite reverse;
+    animation-fill-mode: forwards;
 }
 
 .circleContent {
