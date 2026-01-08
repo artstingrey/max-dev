@@ -24,8 +24,7 @@ export default function TrustPilotSection () {
                 </p>
                 <div className={clsx("trust-pilot-pagination", styles.trustedLogosWrapper)}></div>
             </div>      
-
-            <div className={styles.trustedSwiper}>
+            <div className={clsx('shadow-section', styles.trustedSwiper)}>
                 <Swiper modules={[Pagination]} spaceBetween={0} slidesPerView={1.2} pagination={{
                     el: '.trust-pilot-pagination',
                     clickable: true,

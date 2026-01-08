@@ -447,6 +447,10 @@ picture {
 	}
 }
 
+.shadow-section {
+	mask-image: linear-gradient(to right,transparent 0,black 100px,black calc(100% - 100px),transparent 100%);
+}
+
 .running-line {
     overflow: hidden;
     display: flex;
@@ -916,6 +920,10 @@ picture {
 			height: 12px;
 			left: 4px;
 		}
+	}
+
+	.shadow-section {
+		mask-image: linear-gradient(to right,transparent 0,black 200px,black calc(100% - 200px),transparent 100%);	
 	}
 
 	.running-line {
