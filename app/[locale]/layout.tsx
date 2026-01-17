@@ -7,11 +7,13 @@ import { notFound } from "next/navigation";
 import Header from "../components/core/header/Header";
 import ContactForm from "../components/contactForm/ContactForm";
 import Footer from "../components/core/footer/Footer";
+import GradualBlur from "../components/gradualBlur/GradualBlur";
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/free-mode';
 import "@/app/styles/global.scss";
+
 
 
 
@@ -152,6 +154,16 @@ export default async function LocaleLayout({children, params}: LayoutProps) {
         {children}
         <Footer />
         </NextIntlClientProvider>
+        <GradualBlur
+          target="page"
+          position="bottom"
+          height="4rem"
+          strength={2}
+          divCount={5}
+          curve="bezier"
+          exponential={true}
+          opacity={1}
+        />
       </body>
     </html>
   );
