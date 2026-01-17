@@ -4,10 +4,12 @@ import type { NavigationOptions } from "swiper/types";
 import { Navigation } from 'swiper/modules';
 import HowWeWorkCell from "./HowWeWorkCell";
 import { useRef } from "react";
+import { HowWeWorkProps } from "./HowWeWorkCellsContainer";
 import styles from './HowWeWork.module.scss';
 
 
-export default function HowWeWorkSwiper () {
+
+export default function HowWeWorkSwiper ({items}:HowWeWorkProps) {
     const navigationPrevRef = useRef<HTMLButtonElement | null>(null);
     const navigationNextRef = useRef<HTMLButtonElement | null>(null);
 
@@ -21,21 +23,13 @@ export default function HowWeWorkSwiper () {
 
             swiper.params.navigation = nav;
           }} spaceBetween={20} freeMode={true} slidesPerView="auto" className={styles.swiper} breakpoints={{768: {enabled: false,allowTouchMove: false,pagination: { enabled: false }}}}>
-            <SwiperSlide className={styles.swiperCellItem}>
-                <HowWeWorkCell number="01." title="You tell us the idea" text="Tell us what you want to build, your goals, your audience, and what success looks like."/>
-            </SwiperSlide>    
-            <SwiperSlide className={styles.swiperCellItem}>
-                <HowWeWorkCell number="02." title="We pick the solution" text="Together we decide: MVP from scratch or a ready white-label base — lean and focused."/>  
-            </SwiperSlide>
-            <SwiperSlide className={styles.swiperCellItem}>
-                <HowWeWorkCell number="03." title="We design & build" text="We handle UI/UX, development, testing, and iteration — in weekly sprints with full transparency."/>
-            </SwiperSlide>
-            <SwiperSlide className={styles.swiperCellItem}>
-                <HowWeWorkCell number="04." title="You launch & get first clients" text="We deploy your product, support the release, set up marketing and stay in touch for scaling."/>
-            </SwiperSlide>
-            <SwiperSlide className={styles.swiperCellItem}>
-                <HowWeWorkCell number="05." title="We grow your business" text="From scaling to improvements — we stay by your side to put your business on solid ground."/>
-            </SwiperSlide>
+            {items.map((item, index) => {
+                return (
+                     <SwiperSlide key={index} className={styles.swiperCellItem}>
+                        <HowWeWorkCell number={'0' + (index + 1) + '.'} title={item.title} text={item.text}/>
+                    </SwiperSlide>    
+                );
+            })}
         </Swiper>
 
         <div className={styles.sliderControls}>

@@ -75,6 +75,10 @@
     column-gap: 8px;
 }
 
+.header-lang-menu {
+    display: none;
+}
+
 @media only screen and (min-width: $break-point-small) {
     .header {
         height: 72px;
@@ -89,7 +93,7 @@
     }
 
     .header__left-part {
-        width: 15%;
+        width: 28%;
     }
 
     .header__center-part {
@@ -98,8 +102,10 @@
     }
 
     .header__right-part {
-        width: 15%;
+        width: 28%;
         justify-content: flex-end;
+        align-items: center;
+        column-gap: 20px;
     }
 
     .main-menu {
@@ -116,15 +122,21 @@
         }
     }
 
+    .header-lang-menu {
+        display: flex;
+    }
+
 }
 
 @media only screen and (min-width: $break-point-medium) {
     .main-menu {
         column-gap: 24px;
     }
+
+    .header__right-part {
+        column-gap: 40px;
+    }
 }
-
-
 
 @media only screen and (min-width: $break-point-full-style) {
     .main-menu {

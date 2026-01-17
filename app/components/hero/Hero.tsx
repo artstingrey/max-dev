@@ -1,9 +1,15 @@
 import clsx from 'clsx';
 import SButton from '../core/buttons/sButton';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import styles from './Hero.module.scss';
 
+
 export default function Hero () {
+
+    const t = useTranslations('hero');
+    const heroList = t.raw('heroList') as string[];
+
     return (
         <section className={styles.hero}>
             <picture className="section-bg responsive-image">
@@ -19,20 +25,20 @@ export default function Hero () {
             </picture>
             <div className={clsx(styles.heroMcontainer,'m-container')}>
                 <div className={styles.heroText}>
-                    We help founders and startups build lean, launch-ready digital products — fast, smart, and scalable from day one.
+                    {t('heroText')}
                 </div>
                 <div className={styles.heroBottomPart}>
                     <ul className={styles.heroList}>
-                        <li>30+ products built</li>
-                        <li>Senior team</li>
-                        <li>Full-cycle delivery</li>
+                        {heroList.map((item, index) => (
+                            <li key={index}>{item}</li>
+                        ))}
                     </ul>
                     <div className={styles.heroTitle}>
-                        <h1>From Idea to<br/> MVP in Months, Not Years</h1>
+                        <h1>{t('heroTitle')}</h1>
                         <div className={styles.heroButtons}>
-                            <SButton text='Let’s Talk' icon={true} />
+                            <SButton text={t('talk')} icon={true} />
                             <Link href="#projects" className={styles.heroButton}>
-                                Explore Projects
+                                {t('projects')}
                                 <span className={clsx(styles.icon, "svg")}>
                                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect width="32" height="32" rx="16" fill="#8C8C8C" fillOpacity="0.2"/>

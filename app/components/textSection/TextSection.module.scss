@@ -17,14 +17,19 @@
     h3 {
         font-size: 32px;
         font-weight: 600;
-        line-height: 34px;
+        line-height: 28px;
         text-align: center;
+        letter-spacing: -1px;
     }
 }
 
 .button {
     margin-top: 32px;
     width: 100%;
+    
+    a {
+        width: 100%;
+    }
 }
 
 @media only screen and (min-width: $break-point-small) {
@@ -36,7 +41,7 @@
     .textSectionWrapper {
          h3 {
             font-size: 40px;
-            line-height: 42px;
+            line-height: 38px;
         }
     }
    
@@ -44,6 +49,10 @@
     .button {
         margin-top: $main-gap-s;
         width: auto;
+
+        a {
+            width: auto;
+        }
     }
 }
 

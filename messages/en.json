@@ -1,0 +1,277 @@
+{
+    "SEO": {
+        "title": "MaxDev | MVP Development for Startups. From Idea to Launch.",
+        "description": "We help founders build lean, scalable digital products fast. Senior dev team for Web, Mobile & MVP development. Turn your idea into a product in months."
+    },
+    "mainMenu": {
+        "projects": "Projects",
+        "services": "Services ",
+        "how-we-work": "How we work",
+        "contact":"Contact"
+    },
+    "secondMenu": {
+        "terms-of-service": "Terms of Service",
+        "privacy-policy": "Privacy Policy"
+    },
+    "header": {
+        "contactFormButton": "Book Free Strategy Call",
+        "contact": "Contact"
+    },
+    "hero": {
+        "heroText": "We help founders and startups build lean, launch-ready digital products — fast, smart, and scalable from day one.",
+        "heroList": [
+            "30+ products built",
+            "Senior team",
+            "Full-cycle delivery"
+        ],
+        "heroTitle": "From Idea to\nMVP in Months, Not Years",
+        "talk": "Let’s Talk",
+        "projects": "Explore Projects"
+    },
+    "clients": {
+        "text": "No global brands (yet). Just global standards."
+    },
+    "about": {
+        "title": "About",
+        "text-top-1": "We step in as your product squad: from MVPs to full-scale platforms, we help you",
+        "text-top-2": "validate faster, launch smarter, and focus on what really matters — growth.",
+        "text-bottom": "We get startups — because we build them too :)",
+        "about-item-1": "Pre-seed & early-stage startups",
+        "about-item-2": "Small and medium businesses",
+        "about-item-3": "Digital founders without dev teams"
+    },
+    "portfolio": {
+        "title": "Proven by founders.\nBacked by results.",
+        "subTitle": "featured works",
+        "maxWallet": {
+            "title": "MaxWallet",
+            "subTitle": "crypto wallet",
+            "desc": "From Idea to Launch",
+            "details": {
+                "about": "About project",
+                "aboutText": "MaxWallet is a non-custodial cryptocurrency wallet designed to offer users seamless management of their digital assets.",
+                "services": "Services",
+                "servicesList": [
+                    "Web Design",
+                    "Web Development",
+                    "Mobile App Development",
+                    "Blockchain Integration",
+                    "UI/UX Design",
+                    "Security Implementation"
+                ]
+            },
+            "linkText": "Live project"
+        },
+        "maxProfit": {
+            "title": "MaxProfit",
+            "subTitle": "educational platform",
+            "descItems": [
+                "Product Strategy",
+                "Full-Stack Development"
+            ],
+            "details": {
+                "about": "About project",
+                "aboutText": "MaxProfit is an educational platform tailored for individuals interested in cryptocurrency trading and investment.",
+                "services": "Services",
+                "servicesList": [
+                    "Web Design",
+                    "Web Development",
+                    "Educational Content Creation",
+                    "UI/UX Design",
+                    "Tool Development",
+                    "Security Implementation"
+                ]
+            },
+            "linkText": "Live project"
+        },
+        "maxSwap": {
+            "title": "MaxSwap",
+            "subTitle": "crypto ecosystem",
+            "desc": "From Idea to Launch",
+            "details": {
+                "about": "About project",
+                "aboutText": "MaxSwap is a crypto wallet with built-in virtual cards, allowing users to store, manage, and spend their digital assets with ease.",
+                "services": "Services",
+                "servicesList": [
+                    "Web Design",
+                    "Web Development",
+                    "Mobile App Development",
+                    "Blockchain Integration",
+                    "UI/UX Design",
+                    "Security Implementation"
+                ]
+            },
+            "linkText": "Live project"
+        },
+        "spotLight": {
+            "title": "Ready for the\nspotlight?",
+            "text": "Become our next featured project. We turn ambitious ideas into digital products that get noticed and deliver results.",
+            "linkText": "Let's talk"
+        }
+    },
+    "whatWeDo": {
+        "subTitle": "What We Do",
+        "items": [
+            {
+                "title": "Product Strategy",
+                "lineText": [
+                    "Product audit",
+                    "User flow mapping",
+                    "Technical consultation",
+                    "MVP scope definition",
+                    "Roadmapping",
+                    "Product audit",
+                    "User flow mapping",
+                    "Technical consultation",
+                    "MVP scope definition",
+                    "Roadmapping"
+                ]
+            },
+            {
+                "title": "UI/UX Design",
+                "lineText": [
+                    "Wireframes & prototyping",
+                    "Design systems",
+                    "Responsive web & mobile UI",
+                    "UX optimization",
+                    "Wireframes & prototyping",
+                    "Design systems",
+                    "Responsive web & mobile UI",
+                    "UX optimization"
+                ]
+            },
+            {
+                "title": "Full-Stack Development",
+                "lineText": [  
+                    "Web app & SPA development",
+                    "Mobile (PWA / hybrid)",
+                    "Backend & API setup",
+                    "Admin panels",
+                    "QA & deployment",
+                    "Web app & SPA development",
+                    "Mobile (PWA / hybrid)",
+                    "Backend & API setup",
+                    "Admin panels",
+                    "QA & deployment"
+                ]
+            },
+            {
+                "title": "MVP Launch",
+                "lineText": [  
+                    "Beta version release",
+                    "User testing support",
+                    "Iteration & adjustments",
+                    "Tech support during launch",
+                    "Performance analytics",
+                    "Beta version release",
+                    "User testing support",
+                    "Iteration & adjustments",
+                    "Tech support during launch",
+                    "Performance analytics"
+                ]
+            },
+            {
+                "title": "Scaling",
+                "lineText": [  
+                    "Ongoing development",
+                    "UX/UI redesign",
+                    "Product growth features",
+                    "Team extension",
+                    "Ongoing development",
+                    "UX/UI redesign",
+                    "Product growth features",
+                    "Team extension"
+                ]    
+            }
+        ]
+    },
+    "banner": {
+        "title": "Need just design? Dev only?\nWe plug in where you need us.",
+        "linkText": "Let's chat"
+    },
+    "howWewORK": {
+        "subTitle": "Clear stages. Predictable outcomes.",
+        "items": [
+            {
+                "title": "You tell us the idea",
+                "text": "Tell us what you want to build, your goals, your audience, and what success looks like."
+            },
+            {
+                "title": "We pick the solution",
+                "text": "Together we decide: MVP from scratch or a ready white-label base — lean and focused."
+            },
+            {
+                "title": "We design & build",
+                "text": "We handle UI/UX, development, testing, and iteration — in weekly sprints with full transparency."
+            },
+            {
+                "title": "You launch & get first clients",
+                "text": "We deploy your product, support the release, set up marketing and stay in touch for scaling."
+            },
+            {
+                "title": "We grow your business",
+                "text": "From scaling to improvements — we stay by your side to put your business on solid ground."
+            }
+        ]
+    },
+    "CTA": {
+        "title": "Not sure where to start? Let’s talk.",
+        "text": "Book a free 30-minute discovery session.\nWe’ll help you shape your idea, define the scope, and give clear next steps.",
+        "linkText": "Get Free Strategy Call"
+    },
+    "productTeam": {
+        "title": "We’re not\nan agency. We’re your\nproduct team.",
+        "items": [
+            "Fast cycles,\n lean mindset",
+            "30+ launches — from fintech to SaaS",
+            "Senior team — no juniors,\n no outsourcing",
+            "Clear communication & weekly updates",
+            "Clients come back with\n 2nd and 3rd projects"
+        ]
+    },
+    "trustPilot": {
+        "title": "We’re proud to\nbe 5 rated",
+        "subTitle": "Trusted by 50+ teams",
+        "trustPilotText": "50+ reviews",
+        "items": [
+            {
+                "text": "We had an idea, but we didn't have a team. MaxDev not only created our MVP but also helped us formulate the concept, prioritize features, and launch quickly. The team is engaged, communicative, and highly skilled.",
+                "author": "Omar T.",
+                "position": "Product Owner"
+            },
+            {
+                "text": "We were looking for a team that could launch an MVP in three months, not a year. MaxDev delivered in 10 weeks. Clear sprints, minimal bureaucracy, and a focus on what the user really needed. An ideal partner for the early stages.",
+                "author": "Alex R.",
+                "position": "CEO"
+            },
+            {
+                "text": "We needed more than just functionality, but a 'wow' effect for investors. MaxDev's designers completely redesigned our user flow. The app is intuitive and visually appealing. After the release, conversion rates increased by 40%.",
+                "author": "Sarah J.",
+                "position": "Product Owner"
+            },
+            {
+                "text": "It's rare to find contractors who write such clean code.\" We needed a complex backend solution for a crypto exchange, and these guys offered an easily scalable architecture. No legacy code, everything is up to modern standards.",
+                "author": "Dmitry K.",
+                "position": "CTO"
+            },
+            {
+                "text": "They implemented a complex payment integration that the previous team couldn't handle. They're great.",
+                "author": "Ivan P.",
+                "position": "E-commerce Manager"
+            }
+        ]
+    },
+    "footer": {
+        "footerMain": {
+            "text": ["Want to see", "your idea live?"],
+            "textLinkVisible": ["Let’s","talk."],
+            "textLinkInVisible": ["Let’s","build","together."]
+        },
+        "portfolio": {
+            "subTitle": "maxdev portfolio",
+            "text": "See Our Work\nin Action",
+            "linkTex": "Check Out"
+        },
+        "copy": "All rights reserved."
+    }
+}

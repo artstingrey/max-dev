@@ -1,0 +1,13 @@
+{
+    "mainMenu": {
+        "card": "Card",
+        "features": "Features",
+        "referal":"Referal",
+        "blog":"Blog",
+        "faq":"FAQ"
+    },
+    "home": {
+        "test": "home test"
+    }
+}
+

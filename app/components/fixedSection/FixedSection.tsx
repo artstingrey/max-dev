@@ -2,10 +2,12 @@
 import clsx from 'clsx';
 import { useEffect, useRef } from 'react';
 import SButton from '../core/buttons/sButton';
+import { useTranslations } from 'next-intl';
 import styles from './FixedSection.module.scss';
 
 
 export default function FixedSection () {
+    const t = useTranslations('CTA');
 
     const parallaxStrength = 24;
     const sectionRef = useRef<HTMLElement | null>(null);
@@ -72,10 +74,9 @@ export default function FixedSection () {
                 <img src="/images/section-bg-mob@2x.jpg" width="750" height="1400" alt="Section background" ref={imgRef} decoding="async" loading="lazy"/>
             </picture>
             <div className={styles.fixedSectionWrapper}>
-                <h2>Not sure where to start? Let’s talk.</h2>  
-                <p>Book a free 30-minute discovery session.<br/> We’ll help you shape your idea, define the scope, and give clear next steps.</p> 
-                
-                <SButton text='Get Free Strategy Call' url='#' icon={true} />
+                <h2>{t("title")}</h2>  
+                <p>{t("text")}</p> 
+                <SButton text={t("linkText")} url='#' icon={true} />
             </div>
         </section>
     );

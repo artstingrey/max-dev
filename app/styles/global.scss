@@ -427,8 +427,8 @@ picture {
 
 .logo {
 	display: block;
-    width: 164px;
-    height: 26px;
+    width: 105px;
+    height: 40px;
 
 	span {
 		display: block;
@@ -598,7 +598,7 @@ picture {
 		background: #000000;
 		width: 11px;
 		height: 11px;
-		border: 3px solid #D1F249;
+		border: 3px solid #EB5107;
 	}
 }
 
@@ -787,6 +787,71 @@ picture {
 	margin: 0 auto;
 }
 
+.decorationTop {
+    width: 1px;
+    height: 150px;
+    margin: 12px auto 30px auto;
+} 
+
+.decorationBottom {
+    width: 1px;
+    height: 150px;
+    margin: 12px auto 0 auto;   
+}
+
+.text-page {
+	padding-top: 128px;
+	padding-left: $main-padding-m;
+	padding-right: $main-padding-m;
+
+	h1 {
+		margin: 0;
+		text-align: center;
+		font-size: 60px;
+		font-weight: 600;
+		line-height: 60px;
+		letter-spacing: -1;
+		text-transform: none;
+	}
+
+	.decorationTop {
+		margin-top: 48px;
+		margin-bottom: 0;
+	}
+}
+
+.text-content {
+	font-size: 16px;
+	line-height: 18px;
+	margin-top: 48px;
+	margin-bottom: 64px;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 768px;
+
+	h2 {
+		margin: 32px 0 32px 0;
+		font-size: 48px;
+		font-weight: 600;
+		line-height: 50px;
+	}
+
+	h3 {
+		margin: 24px 0 24px 0;
+		font-size: 40px;
+		font-weight: 600;
+		line-height: 42px;
+	}
+
+	p {
+		margin: 0 0 16px 0;
+	}
+
+	> h2:first-child {
+		margin-top: 0;
+	}
+}
+
 @media only screen and (min-width: $break-point-tablet) {
 	.screen-section {
 		&.screen-section--mob  {
@@ -878,11 +943,6 @@ picture {
 		line-height: 24px;
 	}
 
-	.logo {
-    	width: 190px;
-    	height: 30px;
-	}
-
 	.section-description, .section-description-small {
 		font-size: 16px;
 		line-height: 20px;
@@ -926,8 +986,60 @@ picture {
 		mask-image: linear-gradient(to right,transparent 0,black 200px,black calc(100% - 200px),transparent 100%);	
 	}
 
+	.shadow-section-desctop {
+		mask-image: linear-gradient(to right,transparent 0,black 200px,black calc(100% - 200px),transparent 100%);
+	}
+
 	.running-line {
 		mask-image: linear-gradient(to right,transparent 0,black 200px,black calc(100% - 200px),transparent 100%);	
+	}
+
+	.decorationTop, .decorationBottom {
+        width: 1px;
+        height: 200px;
+    }
+
+	.text-page {
+		padding-top: 176px;
+		h1 {
+			margin: 0;
+			font-size: 90px;
+			line-height: 90px;
+		}
+
+		.decorationTop {
+			margin-top: 60px;
+			margin-bottom: 0;
+		}
+	}
+
+	.text-content {
+		font-size: 18px;
+		line-height: 20px;
+		margin-top: 16px;
+		margin-bottom: 120px;
+
+		h2 {
+			margin: 32px 0 32px 0;
+			font-size: 48px;
+			font-weight: 600;
+			line-height: 50px;
+		}
+		
+		h3 {
+			margin: 24px 0 24px 0;
+			font-size: 40px;
+			font-weight: 600;
+			line-height: 42px;
+		}
+
+		p {
+			margin: 0 0 16px 0;
+		}
+
+		> h2:first-child {
+			margin-top: 0;
+		}
 	}
 }
 

@@ -3,20 +3,20 @@ import SButton from '../core/buttons/sButton';
 import { portfolioItemDataType } from "./ImageSection";
 import styles from './ImageSection.module.scss';
 
-export default function PortfolioDesctopItem ({image, subTitle, title, desc = '', descArr = [], about, services, url = '#'}:portfolioItemDataType) {
+export default function PortfolioDesctopItem ({image, subTitle, title, desc = '', descArr = [], aboutTitle, about, servicesTitle, services, url = '#', linkText}:portfolioItemDataType) {
     return (
         <div className={styles.portfolioItem}>
             <div className={styles.portfolioImageContainer}>
                 <div className={styles.portfolioImageDescritionContainer}>
                     <div>
                         <div className={styles.portfolioImageTextItem}>
-                            <p className={styles.portfolioImageTitle}>About project</p>
+                            <p className={styles.portfolioImageTitle}>{aboutTitle}</p>
                             <div className={styles.portfolioImageDesc}>
                                 <p>{about}</p>
                             </div>
                         </div>
                         <div className={styles.portfolioImageTextItem}>
-                            <p className={styles.portfolioImageTitle}>Services</p>
+                            <p className={styles.portfolioImageTitle}>{servicesTitle}</p>
                             <div className={styles.portfolioImageDesc}>
                                 <ul>
                                     {services.map((service, index) => {
@@ -26,7 +26,7 @@ export default function PortfolioDesctopItem ({image, subTitle, title, desc = ''
                             </div>
                         </div>
                         <div className="button-wrap">
-                            <SButton text="Live project" url={url} icon={true} />
+                            <SButton text={linkText} url={url} icon={true} />
                         </div>
                     </div>
                 </div>

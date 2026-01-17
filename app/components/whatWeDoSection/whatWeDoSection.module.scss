@@ -18,8 +18,8 @@
     > p {
         font-size: 48px;
         font-weight: 600;
-        line-height: 60px;
-        letter-spacing: -1px;
+        line-height: 38px;
+        letter-spacing: -3px;
         text-align: center;
         margin: 0;
     }
@@ -55,7 +55,7 @@
     .titleSection {
         > p {
             font-size: 60px;
-            line-height: 74px;
+            line-height: 50px;
         }
 
         &:hover {
@@ -71,7 +71,7 @@
     .titleSection {
         > p {
             font-size: 90px;
-            line-height: 104px;
+            line-height: 80px;
         }
     }
 }

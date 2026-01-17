@@ -129,6 +129,35 @@
     max-width: 450px;
 }
 
+.texItem {
+    margin-top: 36px;
+    padding: 40px 24px 40px 24px;
+    background: #0E0E0E;
+    border: 1px solid $color-black90;
+
+    h3 {
+        text-align: center;
+        font-size: 48px;
+        font-weight: 500;
+        line-height: 42px;
+        letter-spacing: -1px;
+        white-space: pre-line;
+        margin: 0;
+    }
+
+    p {
+        margin: 32px 0 0 0;
+        font-size: 14px;
+        line-height: 16px;
+        text-align: center;
+    }
+
+    .textItemButton {
+        margin-top: 32px;
+        justify-content: center;
+    }
+}
+
 @media only screen and (min-width: $break-point-tablet) {
     .portfolioRow {
         display: flex;
@@ -191,28 +220,25 @@
     }
 
     .texItem {
+        margin-top: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background: #0E0E0E;
-        border: 1px solid $color-black90;
         padding: 20px;
         height: 100%;
 
         h3 {
-            text-align: center;
             font-size: 50px;
-            font-weight: 500;
-            line-height: 52px;
-            letter-spacing: -1px;
+            line-height: 44px;
             margin: 0;
         }
 
         p {
             margin: 20px 0 0 0;
+            font-size: 18px;
+            line-height: 20px;
             max-width: 582px;
-            text-align: center;
         }
 
         .textItemButton {
@@ -249,6 +275,7 @@
 
         h2 {
             margin: 0;
+            white-space: pre-line;
         }
     }
 
@@ -326,7 +353,7 @@
         padding: 40px;
         h3 {
             font-size: 70px;
-            line-height: 72px;
+            line-height: 64px;
         }
 
         p {

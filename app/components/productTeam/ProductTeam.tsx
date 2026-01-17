@@ -1,12 +1,16 @@
 import clsx from 'clsx';
+import { useTranslations } from 'next-intl';
 import styles from './ProductTeam.module.scss';
 
 
 export default function ProductTeam () {
+    const t = useTranslations('productTeam');
+    const items = t.raw('items') as string[];
+
     return (
         <section className={clsx(styles.productTeam,"m-container")}>
             <div className={styles.productTeamContent}>
-                <h2>We’re not<br/> an agency. We’re your<br/> product team.</h2>
+                <h2>{t("title")}</h2>
 
                 <div className={styles.productTeamInfo}>
                     <div className={styles.productTeamInfoItem}>
@@ -32,7 +36,7 @@ export default function ProductTeam () {
                                     </defs>
                                 </svg>
                             </div>
-                            <p>Fast cycles, lean mindset</p>
+                            <p>{items[0]}</p>
                         </div>
                     </div>
 
@@ -49,7 +53,7 @@ export default function ProductTeam () {
                                     </g>
                                 </svg>
                             </div>
-                            <p>30+ launches — from fintech to SaaS</p>
+                            <p>{items[1]}</p>
                         </div>
                     </div>
 
@@ -62,7 +66,7 @@ export default function ProductTeam () {
                                     <path d="M17.0371 23.2598H22.963" stroke="#0329A8" strokeWidth="1.77778" strokeLinecap="square" strokeLinejoin="round"/>
                                 </svg>
                             </div>
-                            <p>Senior team — no juniors, no outsourcing</p>
+                            <p>{items[2]}</p>
                         </div>
                     </div>
 
@@ -90,7 +94,7 @@ export default function ProductTeam () {
                                     </defs>
                                 </svg>
                             </div>
-                            <p>Clear communication & weekly updates</p>
+                            <p>{items[3]}</p>
                         </div>
                     </div>
 
@@ -117,7 +121,7 @@ export default function ProductTeam () {
                                     </defs>
                                 </svg>
                             </div>
-                            <p>Clients come back with 2nd and 3rd projects</p>
+                            <p>{items[4]}</p>
                         </div>
                     </div>
                 </div>

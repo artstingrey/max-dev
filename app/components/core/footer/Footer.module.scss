@@ -3,13 +3,17 @@
 .footer {
     padding-left: 8px;
     padding-right: 8px;
+    padding-bottom: 8px;
     max-width: 1920px;
     margin: 0 auto;
 }
 
+.footerWrapper {
+    background: #0E0E0E;
+}
+
 .topPart {
     border: 1px solid $color-black90;
-    // background: #0E0E0E;
 }
 
 .linkPart {
@@ -22,7 +26,7 @@
         font-size: 48px;
         font-weight: 600;
         line-height: 40px;
-        letter-spacing: -1px;
+        letter-spacing: -2px;
 
         a {
             color: $color-white;
@@ -107,7 +111,6 @@
 
 .footerLogoPart {
     border: 1px solid $color-black90;
-    border-top: 0;    
     padding: 32px 24px;
 }
 
@@ -161,6 +164,7 @@
     .footer {
         padding-left: 24px;
         padding-right: 24px;
+        padding-bottom: 24px;
     }  
     
     .topPart {
@@ -200,7 +204,8 @@
             margin: 0;  
             font-size: 30px;
             font-weight: 500;
-            line-height: 32px;  
+            line-height: 32px; 
+            white-space: pre-line;
         }
     }
 
@@ -214,6 +219,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        border-right: 1px solid $color-black90;
 
         .termsPart {
             display: flex;
@@ -222,6 +228,7 @@
 
     .footerLogoPart {
         width: 35%;
+        border: none;
     }
 
     .footerMenu {
@@ -341,6 +348,11 @@
 
     .footerHoverPart {
         position: relative;
+
+        > * {
+          z-index: 1;  
+        }
+
         &:after {
             content: '';
             position: absolute;
@@ -349,7 +361,7 @@
             width: 100%;
             height: 0;
             background: rgba(255, 255, 255, 0.05);
-            z-index: -1;
+            // background: red;
             transition: height 0.3s ease-out;
         }
 
@@ -447,6 +459,7 @@
     .footer {
         padding-left: 64px;
         padding-right: 64px;
+        padding-bottom: 64px;
     }
 
     .topPart {

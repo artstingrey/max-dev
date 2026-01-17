@@ -1,15 +1,17 @@
 import clsx from 'clsx';
 import SButton from '../core/buttons/sButton';
+import { useTranslations } from 'next-intl';
 import styles from './TextSection.module.scss';
 
 
 export default function TextSection () {
+    const t = useTranslations('banner');
     return (
         <section className={styles.textSection}>
             <div className={styles.textSectionWrapper}>
-                <h3>Need just design? Dev only?<br /> We plug in where you need us.</h3>
+                <h3>{t('title')}</h3>
                 <div className={clsx("button-wrap button-wrap--center", styles.button)}>
-                    <SButton text="Let's chat" url="#" icon={true}/>
+                    <SButton text={t('linkText')} url="#" icon={true} />
                 </div>
             </div>
         </section>

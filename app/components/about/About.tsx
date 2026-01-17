@@ -1,12 +1,16 @@
 import clsx from 'clsx';
+import { useTranslations } from 'next-intl';
 import styles from './About.module.scss';
 
+
 export default function About () {
+    const t = useTranslations('about');
+
     return (
         <section className={clsx(styles.aboutSection, 'm-container')}>
             <div className={styles.aboutWrapper}>
-                <h2>About</h2>
-                <div className={clsx("svg", styles.decorationTop)}>
+                <h2>{t('title')}</h2>
+                <div className="svg decorationTop">
                     <svg width="1" height="200" viewBox="0 0 1 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="1" height="200" fill="url(#paint0_linear_38_2341)"/>
                         <defs>
@@ -19,9 +23,9 @@ export default function About () {
                 </div>
                 <div>
                     <p className={styles.aboutText}>
-                        <span className={styles.aboutTextColumn}><span>We step in as your product squad: from MVPs to full-scale platforms, we help you </span></span><span className={styles.aboutTextColumn}><span>validate faster, launch smarter, and focus on what really matters — growth.</span></span>
+                        <span className={styles.aboutTextColumn}><span>{t('text-top-1')} </span></span><span className={styles.aboutTextColumn}><span>{t('text-top-2')}</span></span>
                     </p>
-                    <p className={styles.aboutText}>We get startups — because we build them too :)</p>
+                    <p className={styles.aboutText}>{t('text-bottom')}</p>
                 </div>
                 <div className={styles.circles}>
                     <div className={styles.circleItem}>
@@ -56,7 +60,7 @@ export default function About () {
                                     </defs>
                                 </svg>
                             </div>
-                            <p>Pre-seed & early-stage startups</p>
+                            <p>{t('about-item-1')}</p>
                         </div>
                     </div>
 
@@ -92,7 +96,7 @@ export default function About () {
                                     </defs>
                                 </svg>
                             </div>
-                            <p>Small and medium businesses</p>
+                            <p>{t('about-item-2')}</p>
                         </div>
                     </div>
 
@@ -122,11 +126,11 @@ export default function About () {
                                     </g>
                                 </svg>
                             </div>
-                            <p>Digital founders without dev teams</p>
+                            <p>{t('about-item-3')}</p>
                         </div>
                     </div>
                 </div>
-                <div className={clsx("svg", styles.decorationBottom)}>
+                <div className="svg decorationBottom">
                     <svg width="1" height="200" viewBox="0 0 1 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="1" height="200" transform="matrix(1 0 0 -1 0 200)" fill="url(#paint0_linear_38_2364)"/>
                         <defs>

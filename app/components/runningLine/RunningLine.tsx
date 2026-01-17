@@ -1,7 +1,9 @@
 import clsx from 'clsx';
+import { useTranslations } from 'next-intl';
 import styles from './RunningLine.module.scss';
 
 export default function RunningLine () {
+    const t = useTranslations('clients');
 
     const logos = [
         {id: 1, src: "/images/partners/webflow.svg", alt: "Webflow", width: "215px"},
@@ -25,7 +27,7 @@ export default function RunningLine () {
 
     return (
         <section className={clsx("section-space", styles.runningLine)}>
-            <h2 className={styles.runningLineTitle}>No global brands (yet). Just global standards.</h2> 
+            <h2 className={styles.runningLineTitle}>{t('text')}</h2> 
 
             <div className={clsx('running-line', styles.runningLineWrapper)}>
                 <div className="running-line-wrap">

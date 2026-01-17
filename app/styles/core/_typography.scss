@@ -16,6 +16,7 @@ h2 {
 	margin: 0 0 0 0;
 	transition: color 0.3s;
 	letter-spacing: -1px;
+	white-space: pre-line;
 }
 
 .h2-medium {
@@ -53,6 +54,7 @@ h3 {
 	font-weight: 500;
 	line-height: 40px;
 	margin: 0 0 24px 0;
+	white-space: pre-line;
 }
 
 .h3-small {

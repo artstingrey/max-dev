@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react';
 import PortfolioMobile from './PortfolioMobile';
 import { BaseImage } from '@/app/config/types';
 import PortfolioDesctop from './PortfolioDesctop';
+import { useTranslations } from 'next-intl';
 import styles from './ImageSection.module.scss';
-
 
 
 export type portfolioItemDataType = {
@@ -14,9 +14,12 @@ export type portfolioItemDataType = {
     title: string;
     desc?: string;
     descArr?: string[];
+    aboutTitle: string;
     about: string;
+    servicesTitle: string;
     services: string[];
     url: string;
+    linkText: string;
 };
 
 export type portfolioDataType = {
@@ -24,6 +27,17 @@ export type portfolioDataType = {
 };
 
 export default function ImageSection () {
+    const tPortfolio = useTranslations('portfolio');
+
+    const tWallet = useTranslations('portfolio.maxWallet');
+    const tWalletDetails = useTranslations('portfolio.maxWallet.details');
+
+    const tProfit = useTranslations('portfolio.maxProfit');
+    const tProfitDetails = useTranslations('portfolio.maxProfit.details');
+
+    const tSwap = useTranslations('portfolio.maxSwap');
+    const tSwapDetails = useTranslations('portfolio.maxSwap.details');
+
     const [isMobile, setIsMobile] = useState(false);
 
     const dataImageMobile = [
@@ -70,28 +84,37 @@ export default function ImageSection () {
 
     const baseData = [
         {
-            subTitle: 'crypto wallet',
-            title: 'MaxWallet',
-            desc: 'From Idea to Launch',
-            about: 'MaxWallet is a non-custodial cryptocurrency wallet designed to offer users seamless management of their digital assets.',
-            services: ['Web Design', 'Web Development', 'Mobile App Development', 'Blockchain Integration', 'UI/UX Design', 'Security Implementation'],
-            url: '#'
+            subTitle: tWallet('subTitle'),
+            title: tWallet('title'),
+            desc: tWallet('desc'),
+            aboutTitle: tWalletDetails('about'),
+            about: tWalletDetails('aboutText'),
+            servicesTitle: tWalletDetails('services'),
+            services: tWalletDetails.raw('servicesList') as string[],
+            url: '#',
+            linkText: tWallet('linkText')
         },
         {
-            subTitle: 'educational platform',
-            title: 'MaxProfit',
-            descArr: ['Product Strategy', 'Full-Stack Development'],
-            about: 'MaxProfit is an educational platform tailored for individuals interested in cryptocurrency trading and investment.',
-            services: ['Web Design', 'Web Development', 'Educational Content Creation', 'UI/UX Design', 'Tool Development', 'Security Implementation'],
-            url: '#'
+            subTitle: tProfit('subTitle'),
+            title: tProfit('title'),
+            descArr: tProfit.raw('descItems') as string[],
+            aboutTitle: tProfitDetails('about'),
+            about: tProfitDetails('aboutText'),
+            servicesTitle: tProfitDetails('services'),
+            services: tProfitDetails.raw('servicesList') as string[],
+            url: '#',
+            linkText: tProfit('linkText')
         },
         {
-            subTitle: 'crypto ecosystem',
-            title: 'MaxSwap',
-            desc: 'From Idea to Launch',
-            about: 'MaxSwap is a crypto wallet with built-in virtual cards, allowing users to store, manage, and spend their digital assets with ease.',
-            services: ['Web Design', 'Web Development', 'Mobile App Development', 'Blockchain Integration', 'UI/UX Design', 'Security Implementation'],
-            url: '#'
+            subTitle: tSwap('subTitle'),
+            title: tSwap('title'),
+            desc: tSwap('desc'),
+            aboutTitle: tSwapDetails('about'),
+            about: tSwapDetails('aboutText'),
+            servicesTitle: tSwapDetails('services'),
+            services: tSwapDetails.raw('servicesList') as string[],
+            url: '#',
+            linkText: tSwap('linkText')
         },
     ];
 
@@ -119,8 +142,8 @@ export default function ImageSection () {
     return (
         <section id="projects" className={clsx(styles.portfolioSection, 'm-container')}>
             <div className={styles.portfolioHeader}>
-                <p className="subtitle">featured works</p>
-                <h2>Proven by founders.<br /> Backed by results.</h2>
+                <p className="subtitle">{tPortfolio("subTitle")}</p>
+                <h2>{tPortfolio("title")}</h2>
             </div>
             {isMobile && <PortfolioMobile data={dataMobile} />}
             {!isMobile && <PortfolioDesctop data={dataDesctop} />}

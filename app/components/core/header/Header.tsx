@@ -1,5 +1,4 @@
 'use client';
-import clsx from "clsx";
 import {Logo} from "../Logo";
 import { mainMenu } from "@/app/config/menu.main";
 import MenuSection from "../menuSection/MenuSection";
@@ -8,6 +7,8 @@ import SButtonSmall from "../buttons/sButtonSmall";
 import { ScrambleText } from "../scrambleText/ScrambleText";
 import Link from "next/link";
 import { useContactFormStore } from "@/app/stores/useContactFormStore";
+import LangMenu from "../langMenu/LangMenu";
+import { useTranslations } from "next-intl";
 
 
 
@@ -16,6 +17,8 @@ type HeaderProps = {
 };
 
 export default function Header({ color = '' }: HeaderProps) {
+  const tMenu = useTranslations('mainMenu');
+  const tHeader = useTranslations('header');
   const openContactForm = useContactFormStore((s) => s.open);
   const [isActive, seActive] = useState(false);
       
@@ -33,14 +36,14 @@ export default function Header({ color = '' }: HeaderProps) {
       <header className="header">
         <div className="m-container">
           <div className="header__left-part">
-            <Logo />
+            <Link href="/" className="logo svg"><Logo /></Link>
           </div>
           <nav className="header__center-part">
             <ul className="main-menu">
               {mainMenu.map((menuItem) => {
                 return (
-                  <li key={menuItem.labelKey}>
-                    <Link href={menuItem.href}><ScrambleText text={menuItem.labelKey}></ScrambleText></Link>
+                  <li key={menuItem.key}>
+                    <Link href={menuItem.href}><ScrambleText text={tMenu(menuItem.key)}></ScrambleText></Link>
                   </li>
                 );
               })}
@@ -48,7 +51,7 @@ export default function Header({ color = '' }: HeaderProps) {
             </ul>
           </nav>
           <div className="header__right-part">
-            <SButtonSmall text="Contact" icon={true} className="desctop-hide" onClick={openContactForm} />
+            <SButtonSmall text={tHeader('contact')} icon={true} className="desctop-hide" onClick={openContactForm} />
             <button className="menu-section-button" onClick={openMenu}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clipPath="url(#clip0_93_1613)">
@@ -68,8 +71,9 @@ export default function Header({ color = '' }: HeaderProps) {
                   </defs>
                 </svg>
             </button>
+            <LangMenu className="header-lang-menu" />
             <button className="text-button" onClick={openContactForm}>
-                Book Free Strategy Call
+                {tHeader('contactFormButton')}
                 <span className="icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <mask id="mask0_38_2182" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
