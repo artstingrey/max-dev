@@ -5,6 +5,13 @@
     position: relative;
 }
 
+.heroAurora {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
 .heroMcontainer {
     height: 100%;
     display: flex;

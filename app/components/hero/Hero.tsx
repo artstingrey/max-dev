@@ -2,7 +2,9 @@ import clsx from 'clsx';
 import SButton from '../core/buttons/sButton';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
+import Aurora from '../aurora/Aurora';
 import styles from './Hero.module.scss';
+
 
 
 export default function Hero () {
@@ -12,17 +14,7 @@ export default function Hero () {
 
     return (
         <section className={styles.hero}>
-            <picture className="section-bg responsive-image">
-                <source srcSet="/images/hero-bg-mob@2x.avif" media="(max-width: 767px)" type="image/avif" />
-                <source srcSet="/images/hero-bg-mob@2x.webp" media="(max-width: 767px)" type="image/webp" />
-                <source srcSet="/images/hero-bg-mob@2x.jpg" media="(max-width: 767px)" type="image/jpeg" />
-
-                <source srcSet="/images/hero-bg.avif 1x, /images/hero-bg@2x.avif 2x" media="(min-width: 768px)" type="image/avif" />
-                <source srcSet="/images/hero-bg.webp 1x, /images/hero-bg@2x.webp 2x" media="(min-width: 768px)" type="image/webp" />
-                <source srcSet="/images/hero-bg.jpg 1x, /images/hero-bg@2x.jpg 2x" media="(min-width: 768px)" type="image/jpeg" />
-
-                <img src="/images/hero-bg-mob@2x.jpg" alt="Hero image" width="750" height="1624" decoding="async" loading="eager" fetchPriority="high" />
-            </picture>
+            <Aurora colorStops={['#ffffff','#eb5107','#0329a8']} blend={1} className={styles.heroAurora} />
             <div className={clsx(styles.heroMcontainer,'m-container')}>
                 <div className={styles.heroText}>
                     {t('heroText')}
