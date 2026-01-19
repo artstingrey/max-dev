@@ -41,6 +41,7 @@ button {
     font-weight: 600;
     font-size: 16px;
     line-height: 18px;
+    white-space: nowrap;
     opacity: 1;
     backdrop-filter: blur(8px);
 
@@ -188,7 +189,7 @@ button {
     padding: 4px;
     column-gap: 8px;
     font-size: 16px;
-    line-height: 18px;
+    line-height: 22px;
     color: $color-white;
     text-decoration: none;
     white-space: nowrap;
@@ -197,6 +198,20 @@ button {
     .icon {
         width: 24px;
         height: 24px;
+        opacity: 1;
+        transform: scale(1);
+        transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .hover-part-link-text-out, .hover-part-link-text-in {
+        padding: 0;
+    }
+
+    &:hover {
+        .icon {
+            transform: scale(1.4);
+            opacity: 0;
+        }
     }
 }
 
@@ -324,7 +339,7 @@ button {
     .s-button {
         height: 54px;
         padding-left: 10px;
-        padding-right: 38px;
+        padding-right: 48px;
         font-size: 18px;
         line-height: 20px; 
 
@@ -391,7 +406,6 @@ button {
         font-size: 18px;
         line-height: 20px; 
         padding-left: 10px;
-        padding-right: 10px;
 
         &.s-button--small { 
             height: 48px;

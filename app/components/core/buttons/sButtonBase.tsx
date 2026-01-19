@@ -32,7 +32,7 @@ export default function SButtonBase ({text = '', url = '', icon = false, sizeCla
 
     if (url && typeLink === 'normal') {
         return (
-            <a href={url} {...commonProps}>
+            <a href={url} {...commonProps} target="_blank" rel="noopener noreferrer">
                 <SButtonInner text={text} icon={icon} isHovered={isHovered} />
             </a>
         );

@@ -7,10 +7,16 @@ import SButtonClose from '../core/buttons/sButtonClose';
 import Checkbox from './checkbox/CheckBox';
 import RadioGroup from './radioButton/RadioWrapper';
 import { MainLink, TelegramLink } from '../mailLink/MailLink';
+import { useTranslations } from 'next-intl';
 
 export default function ContactForm () {
     const isOpen = useContactFormStore((s) => s.isOpen);
     const close = useContactFormStore((s) => s.close);
+
+    const t = useTranslations("contactForm");
+    const interestedList = t.raw('interestedList') as {id: string;label: string;}[];
+    const badgetList = t.raw('badgetList') as string[];
+    
 return (
     <div className={clsx(styles.overlay, isOpen && styles.active)} aria-hidden={!isOpen}>
         <div className={styles.closeOverlay} onClick={close}></div>
@@ -19,9 +25,9 @@ return (
             <div className={styles.contactFormContent}>
                 <SButtonClose className={styles.formButtonCloseM} onClick={close}/>
                 <div className={styles.contactFormGap}>
-                    <h2>Get in touch</h2>
+                    <h2>{t('title')}</h2>
                     <p className={styles.contactFormDesc}>
-                        Drop us a few lines about your idea and we’ll get back within 24h
+                        {t('text')}
                     </p>
                 </div>
                 <form className={styles.form}>
@@ -45,10 +51,10 @@ return (
                                     </defs>
                                 </svg>
                             </span>
-                            Name*
+                            {t("name")}*
                         </label>
                         <div className="s-input">
-                            <input type="text" placeholder="Full name" id="name" required/>
+                            <input type="text" placeholder={t("namePlaceholder")} id="name" required/>
                         </div>
                     </div>
                     <div className="field-wrapper">
@@ -99,10 +105,10 @@ return (
                                     </defs>
                                 </svg>
                             </span>
-                            Tell us about your project
+                            {t("tellUs")}
                         </label>
                         <div className="s-input">
-                            <input type="text" placeholder="What do you want to build?" id="project-desc" />
+                            <input type="text" placeholder={t('tellUsPlaceholder')} id="project-desc" />
                         </div>
                     </div>
 
@@ -119,7 +125,7 @@ return (
                                         </g>
                                     </svg>
                                 </span>
-                                Attach file
+                                {t("file")}
                             </div>
                             <input type="file" />
                         </div>
@@ -147,16 +153,13 @@ return (
                                     </defs>
                                 </svg>
                             </span>
-                            I&#39;m interested in...
+                            {t("interested")}
                         </p> 
 
                         <div className={styles.contactFormChecboxes}>
-                            <Checkbox id="product-strategy" label="Product Strategy" />
-                            <Checkbox id="ui-ux-design" label="UI/UX Design" />
-                            <Checkbox id="full-stack" label="Full-Stack Development" />
-                            <Checkbox id="mvp-launch" label="MVP Launch" />
-                            <Checkbox id="scaling" label="Scaling" />
-                            <Checkbox id="oher" label="Other" />
+                            {interestedList.map((item) => {
+                                return <Checkbox key={item.id} id={item.id} label={item.label} />;
+                            })}
                         </div>   
                     </div>
 
@@ -184,9 +187,8 @@ return (
                                     </clipPath>
                                     </defs>
                                 </svg>
-
                             </span>
-                            my budget is...
+                            {t("badget")}
                         </p> 
 
                         <div className={clsx(styles.contactFormChecboxes, styles.contactFormRadio)}>
@@ -194,37 +196,37 @@ return (
                             [
                                 {
                                     id: 'up-10',
-                                    label: 'up to $10k',
-                                    value: 'up to $10k'
+                                    label: badgetList[0],
+                                    value: badgetList[0]
                                 },
                                 {
                                     id: 'up-10-20',
-                                    label: '$10-20k',
-                                    value: '$10-20k'
+                                    label: badgetList[1],
+                                    value: badgetList[1]
                                 },
                                 {
                                     id: 'up-20-50',
-                                    label: '$20-50k',
-                                    value: '$20-50k'
+                                    label: badgetList[2],
+                                    value: badgetList[2]
                                 },
                                 {
                                     id: 'up-50',
-                                    label: '> $50k',
-                                    value: '> $50k'
+                                    label: badgetList[3],
+                                    value: badgetList[3]
                                 },
                             ]
                         } />
                         </div>
                         <div className={styles.buttonWrap}>
-                        <SButton text="Send" icon={true} type="submit"/>
+                        <SButton text={t('send')} icon={true} type="submit"/>
                         </div>   
                     </div>
                 </form>
                 <div className={styles.contactFormGap}>
-                    <p className={styles.or}>or</p>
+                    <p className={styles.or}>{t("or")}</p>
                     <div className={styles.orButtons}>
-                        <MainLink text='Send an email' />
-                        <TelegramLink text='Contact via Telegram' />
+                        <MainLink text={t('sendEmail')} />
+                        <TelegramLink text={t('telegram')} />
                     </div>
                 </div>
             </div>

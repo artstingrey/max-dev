@@ -117,6 +117,14 @@
     }
 }
 
+@media only screen and (min-width: $break-point-medium) {
+     .productTeamContent {
+        h2 {
+            line-height: 4.2vw;
+        }
+    }    
+}
+
 @media only screen and (min-width: $break-point-normal) {
     .productTeamInfoItem {
         p {
@@ -127,6 +135,10 @@
 
     .productTeamContent {
         column-gap: 30px;
+
+        h2 {
+            line-height: 68px;
+        }
     }
 }
 
@@ -141,5 +153,9 @@
     
     .productTeamContent {
         column-gap: 52px;
+
+        h2 {
+            line-height: 90px;
+        }
     }
 }

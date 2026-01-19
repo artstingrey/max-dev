@@ -1,19 +1,20 @@
 import clsx from 'clsx';
 import SButton from '../core/buttons/sButton';
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import Aurora from '../aurora/Aurora';
+import HoverText from '../hoverText/HoverText';
 import styles from './Hero.module.scss';
 
-
-
 export default function Hero () {
-
+    const locale = useLocale();
+    const addClass = locale == "ru" ? styles.heroRu : "";
     const t = useTranslations('hero');
     const heroList = t.raw('heroList') as string[];
+    const projectText = t('projects').split(" ");
 
     return (
-        <section className={styles.hero}>
+        <section className={clsx(styles.hero, addClass)}>
             <Aurora colorStops={['#ffffff','#eb5107','#0329a8']} blend={1} className={styles.heroAurora} />
             <div className={clsx(styles.heroMcontainer,'m-container')}>
                 <div className={styles.heroText}>
@@ -22,15 +23,15 @@ export default function Hero () {
                 <div className={styles.heroBottomPart}>
                     <ul className={styles.heroList}>
                         {heroList.map((item, index) => (
-                            <li key={index}>{item}</li>
+                            <li key={index} className='pusle-dot pusle-dot--shadow'>{item}</li>
                         ))}
                     </ul>
                     <div className={styles.heroTitle}>
                         <h1>{t('heroTitle')}</h1>
                         <div className={styles.heroButtons}>
                             <SButton text={t('talk')} icon={true} />
-                            <Link href="#projects" className={styles.heroButton}>
-                                {t('projects')}
+                            <Link href="#projects" className={clsx("hover-text-part", styles.heroButton)}>
+                                <HoverText visible={projectText} hover={projectText} />
                                 <span className={clsx(styles.icon, "svg")}>
                                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect width="32" height="32" rx="16" fill="#8C8C8C" fillOpacity="0.2"/>

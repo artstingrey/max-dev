@@ -25,6 +25,15 @@
     }
 }
 
+.whatWeDoSectionRu {
+    .titleSection {
+        > p {
+            font-size: 40px;
+            line-height: 32px;
+        }
+    }
+}
+
 .titleRunningLine {
     position: absolute;
     top: 50%;
@@ -65,6 +74,15 @@
             }
         }
     }
+
+    .whatWeDoSectionRu {
+        .titleSection {
+            > p {
+                font-size: 60px;
+                line-height: 50px;
+            }
+        }
+    }
 }
 
 @media only screen and (min-width: $break-point-normal) {
@@ -72,6 +90,15 @@
         > p {
             font-size: 90px;
             line-height: 80px;
+        }
+    }
+
+    .whatWeDoSectionRu {
+        .titleSection {
+            > p {
+                font-size: 90px;
+                line-height: 80px;
+            }
         }
     }
 }
@@ -86,6 +113,15 @@
         > p {
             font-size: 132px;
             line-height: 144px;
+        }
+    }
+
+    .whatWeDoSectionRu {
+        .titleSection {
+            > p {
+                font-size: 132px;
+                line-height: 144px;
+            }
         }
     }
 

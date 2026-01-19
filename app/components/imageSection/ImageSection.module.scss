@@ -9,6 +9,13 @@
         line-height: 48px;
         margin: 32px 0 0 0;
     }
+
+    &.portfolioSectionRu {
+        h2 {
+            font-size: 48px;
+            line-height: 46px;
+        }
+    }
 }
 
 .portfolioContainer {
@@ -263,7 +270,14 @@
 
         h2 {
             font-size: 70px;
-            line-height: 58px;
+            line-height: 56px;
+        }
+
+        &.portfolioSectionRu {
+            h2 {
+                font-size: 50px;
+                line-height: 46px;
+            }
         }
     }
     
@@ -375,7 +389,14 @@
     .portfolioSection {
         h2 {
             font-size: 90px;
-            line-height: 78px;
+            line-height: 74px;
+        }
+
+        &.portfolioSectionRu {
+            h2 {
+                font-size: 70px;
+                line-height: 64px;
+            }   
         }
     }
 }
@@ -387,7 +408,14 @@
 
         h2 {
             font-size: 133px;
-            line-height: 120px;
+            line-height: 116px;
+        }
+
+        &.portfolioSection {
+            h2 {
+                font-size: 113px;
+                line-height: 106px;
+            }    
         }
     }
     

@@ -104,6 +104,8 @@ export default async function LocaleLayout({children, params}: LayoutProps) {
     notFound();
   }
 
+  const className = `${tiktokSans.variable}` + ' locale-' + locale;
+
   return (
     <html lang={locale}>
       <head>
@@ -145,9 +147,9 @@ export default async function LocaleLayout({children, params}: LayoutProps) {
           media="(min-width: 768px)"
           imageSrcSet="/images/hero-bg.webp 1x, /images/hero-bg@2x.webp 2x"
         />
-
+      
       </head>
-      <body className={`${tiktokSans.variable}`}>
+      <body className={className}>
         <NextIntlClientProvider>
         <ContactForm />
         <Header />

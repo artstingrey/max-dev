@@ -21,8 +21,8 @@
         white-space: pre-line;
     }
 
-    a {
-        width: 250px;
+    button {
+        // width: 250px;
         margin: 48px auto 0 auto;
     }
 }
@@ -62,8 +62,8 @@
         align-items: center;
         justify-content: center;
         
-        a {
-            width: 250px;
+        button {
+            // width: 266px;
             margin: 60px auto 0 auto;
         }
     }
@@ -76,7 +76,12 @@
             line-height: 70px;
             margin: 0;
         }
+
+        button {
+            // width: 274px;
+        }
     }
+    
 }
 
 @media only screen and (min-width: $break-point-full-style) {
@@ -87,8 +92,8 @@
             margin: 0;
         }
 
-         a {
-            width: 270px;
+        button {
+            // width: 276px;
         }
     }
 }

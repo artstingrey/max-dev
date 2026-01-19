@@ -47,29 +47,18 @@
         display: flex;
         column-gap: 8px;
         align-items: center;
-
-        &:before {
-            content: '';
-            display: block;
-            width: 14px;
-            height: 14px;
-            border-radius: 100%;
-            flex-shrink: 0;
-            background: rgba(255, 255, 255, 0.2);
+        
+        &:nth-child(2) {
+            &:before {
+                animation-delay: 0.5s;
+            }
+            
         }
-
-        &:after {
-            content: '';
-            display: block;
-            width: 8.4px;
-            height: 8.4px;
-            border-radius: 100%;
-            position: absolute;
-            z-index: 1;
-            top: 50%;
-            left: 2.8px;
-            transform: translateY(-50%);
-            background: $color-white;
+        
+        &:nth-child(3) {
+           &:before {
+                animation-delay: 1s;
+            }
         }
     }
 }
@@ -111,7 +100,7 @@
     height: 56px;
     font-size: 16px;
     font-weight: 600;
-    line-height: 18px;
+    line-height: 20px;
     color: $color-white;
     white-space: nowrap;
     text-decoration: none;
@@ -120,6 +109,15 @@
         width: 32px;
         height: 32px;
         flex-shrink: 0;
+        transform: scale(1) rotate(0);
+        transition: transform 0.3s ease-out;
+
+    }
+
+    &:hover {
+        .icon {
+            transform: scale(0) rotate(-90deg);
+        }
     }
 }
 
@@ -171,19 +169,12 @@
 
         li {
             column-gap: 12px;
+        }
+    }
 
-            &:before {
-                content: '';
-                width: 20px;
-                height: 20px;
-            }
-
-            &:after {
-                content: '';
-                width: 12px;
-                height: 12px;
-                left: 4px;
-            }
+    .heroRu {
+        .heroList {
+            max-width: 900px;
         }
     }
 

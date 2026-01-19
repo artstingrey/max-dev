@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import PortfolioMobile from './PortfolioMobile';
 import { BaseImage } from '@/app/config/types';
 import PortfolioDesctop from './PortfolioDesctop';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import styles from './ImageSection.module.scss';
 
 
@@ -27,6 +27,10 @@ export type portfolioDataType = {
 };
 
 export default function ImageSection () {
+    const locale = useLocale();
+    const linkLang = locale == "en" ? "" : "ru/";
+    const addClass = locale == "ru" ? styles.portfolioSectionRu : "";
+
     const tPortfolio = useTranslations('portfolio');
 
     const tWallet = useTranslations('portfolio.maxWallet');
@@ -91,7 +95,7 @@ export default function ImageSection () {
             about: tWalletDetails('aboutText'),
             servicesTitle: tWalletDetails('services'),
             services: tWalletDetails.raw('servicesList') as string[],
-            url: '#',
+            url: 'https://maxwallet.cc/' + linkLang,
             linkText: tWallet('linkText')
         },
         {
@@ -102,7 +106,7 @@ export default function ImageSection () {
             about: tProfitDetails('aboutText'),
             servicesTitle: tProfitDetails('services'),
             services: tProfitDetails.raw('servicesList') as string[],
-            url: '#',
+            url: 'https://maxprofit.cc/' + linkLang,
             linkText: tProfit('linkText')
         },
         {
@@ -113,7 +117,7 @@ export default function ImageSection () {
             about: tSwapDetails('aboutText'),
             servicesTitle: tSwapDetails('services'),
             services: tSwapDetails.raw('servicesList') as string[],
-            url: '#',
+            url: 'https://maxswap.cc/' + linkLang,
             linkText: tSwap('linkText')
         },
     ];
@@ -140,9 +144,9 @@ export default function ImageSection () {
     }, []);
 
     return (
-        <section id="projects" className={clsx(styles.portfolioSection, 'm-container')}>
+        <section id="projects" className={clsx(styles.portfolioSection, 'm-container', addClass)}>
             <div className={styles.portfolioHeader}>
-                <p className="subtitle">{tPortfolio("subTitle")}</p>
+                <p className="subtitle pusle-dot pusle-dot--shadow pusle-dot--inner-pulse">{tPortfolio("subTitle")}</p>
                 <h2>{tPortfolio("title")}</h2>
             </div>
             {isMobile && <PortfolioMobile data={dataMobile} />}

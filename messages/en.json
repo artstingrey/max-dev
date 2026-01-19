@@ -273,5 +273,35 @@
             "linkTex": "Check Out"
         },
         "copy": "All rights reserved."
+    },
+    "contactForm": {
+        "title": "Get in touch",
+        "text": "Drop us a few lines about your idea and we’ll get back within 24h",
+        "name": "Name",
+        "namePlaceholder": "Full name",
+        "email":"Email",
+        "tellUs": "Tell us about your project",
+        "tellUsPlaceholder": "What do you want to build?",
+        "file": "Attach file",
+        "interested": "I'm interested in...",
+        "interestedList": [
+            { "id": "product-strategy", "label": "Product Strategy" },
+            { "id": "ui-ux-design", "label": "UI/UX Design" },
+            { "id": "full-stack", "label": "Full-Stack Development" },
+            { "id": "mvp-launch", "label": "MVP Launch" },
+            { "id": "scaling", "label": "Scaling" },
+            { "id": "other", "label": "Other" }
+        ],
+        "badget": "my budget is...",
+        "badgetList": [
+            "up to $10k",
+            "$10-20k",
+            "$20-50k",
+            "> $50k"
+        ],
+        "send": "Send",
+        "or": "or",
+        "sendEmail": "Send an email",
+        "telegram": "Contact via Telegram"
     }
 }

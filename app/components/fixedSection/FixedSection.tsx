@@ -1,5 +1,6 @@
 'use client';
 import clsx from 'clsx';
+import { useContactFormStore } from "@/app/stores/useContactFormStore";
 import { useEffect, useRef } from 'react';
 import SButton from '../core/buttons/sButton';
 import { useTranslations } from 'next-intl';
@@ -8,7 +9,7 @@ import styles from './FixedSection.module.scss';
 
 export default function FixedSection () {
     const t = useTranslations('CTA');
-
+    const openContactForm = useContactFormStore((s) => s.open);
     const parallaxStrength = 24;
     const sectionRef = useRef<HTMLElement | null>(null);
     const imgRef = useRef<HTMLImageElement | null>(null);
@@ -76,7 +77,7 @@ export default function FixedSection () {
             <div className={styles.fixedSectionWrapper}>
                 <h2>{t("title")}</h2>  
                 <p>{t("text")}</p> 
-                <SButton text={t("linkText")} url='#' icon={true} />
+                <SButton text={t("linkText")} icon={true} onClick={openContactForm} />
             </div>
         </section>
     );

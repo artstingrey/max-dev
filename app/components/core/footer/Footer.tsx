@@ -7,43 +7,33 @@ import SButton from "../buttons/sButton";
 import { MainLink, TelegramLink } from "../../mailLink/MailLink";
 import { secondMenu } from "@/app/config/menu.footer";
 import { useTranslations } from "next-intl";
+import OpenForm from "./OpenForm";
 import styles from "./Footer.module.scss";
 
 
 
 export default function Footer() {
+    
     const year = new Date().getFullYear();
 
     const tMenu = useTranslations('mainMenu');
     const tSecondMenu = useTranslations("secondMenu");
     
     const tFooter = useTranslations("footer");
-    const fFooterMain = useTranslations("footer.footerMain");
     const fFooterportfolio = useTranslations("footer.portfolio");
 
-    const mainText = fFooterMain.raw('text') as string[];
-    const linkVisible = fFooterMain.raw('textLinkVisible') as string[];
-    const linkHover = fFooterMain.raw('textLinkInVisible') as string[];
-
-    const copyText = "© " + {year} + " MaxDev. " + tFooter('copy');
+    const copyText = "© " + year + " MaxDev. " + tFooter('copy');
 
     return (
         <footer id="contact" className={styles.footer}>
             <div className={styles.footerWrapper}>
                 <div className={styles.topPart}>
-                    <div className={clsx(styles.linkPart, styles.footerHoverPart)}>
-                        <p>{mainText[0]}<br/>{mainText[1]}<br/> <a href="#" className={styles.footerHoverPartLink}><span className={styles.footerHoverPartLinkTextIn}><span>{linkVisible[0]}</span> <span>{linkVisible[1]}</span></span><span className={styles.footerHoverPartLinkTextOut}><span>{linkHover[0]}</span> <span>{linkHover[1]}</span> <span>{linkHover[2]}</span></span></a></p>
-                        <span className={clsx("svg", styles.rowIcon)} >
-                            <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M3.66154 34L0 30.3385L25.1077 5.23077H2.61538V0H34V31.3846H28.7692V8.89231L3.66154 34Z" fill="white"/>
-                            </svg>
-                        </span>
-                    </div>
+                    <OpenForm />
                     <div className={clsx(styles.footerHoverPart, styles.footerPorfolioPart)}>
-                        <div className="subtitle">{fFooterportfolio("subTitle")}</div>
+                        <div className="subtitle pusle-dot pusle-dot--inner-pulse">{fFooterportfolio("subTitle")}</div>
                         <div className={styles.footerPorfolioPartBottom}>
                             <p>{fFooterportfolio("text")}</p>
-                            <SButton text={fFooterportfolio("linkTex")} url="#" icon={true} />
+                            <SButton text={fFooterportfolio("linkTex")} url="#how-we-work" icon={true} />
                         </div>    
                     </div>
                 </div>

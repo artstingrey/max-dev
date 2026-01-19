@@ -9,6 +9,7 @@ import Link from "next/link";
 import { useContactFormStore } from "@/app/stores/useContactFormStore";
 import LangMenu from "../langMenu/LangMenu";
 import { useTranslations } from "next-intl";
+import HoverText from "../../hoverText/HoverText";
 
 
 
@@ -21,7 +22,9 @@ export default function Header({ color = '' }: HeaderProps) {
   const tHeader = useTranslations('header');
   const openContactForm = useContactFormStore((s) => s.open);
   const [isActive, seActive] = useState(false);
-      
+  
+  const contactFormButtonText = tHeader('contactFormButton').split(" ");
+
   const openMenu = () => {
     seActive(true);
   }
@@ -72,8 +75,8 @@ export default function Header({ color = '' }: HeaderProps) {
                 </svg>
             </button>
             <LangMenu className="header-lang-menu" />
-            <button className="text-button" onClick={openContactForm}>
-                {tHeader('contactFormButton')}
+            <button className="text-button hover-text-part" onClick={openContactForm}>
+                <HoverText visible={contactFormButtonText} hover={contactFormButtonText} />
                 <span className="icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <mask id="mask0_38_2182" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">

@@ -273,5 +273,35 @@
             "linkTex": "Смотреть"
         },
         "copy": "Все права защищены."
+    },
+    "contactForm": {
+        "title": "Связаться с нами",
+        "text": "Напишите пару строк о вашей идее, и мы ответим в течение 24 часов",
+        "name": "Имя",
+        "namePlaceholder": "Полное имя",
+        "email":"Email",
+        "tellUs": "Расскажите о вашем проекте",
+        "tellUsPlaceholder": "Что вы хотите построить",
+        "file": "Прикрепить файл",
+        "interested": "Меня интересует...",
+        "interestedList": [
+            { "id": "product-strategy", "label": "Продуктовая стратегия" },
+            { "id": "ui-ux-design", "label": "UI/UX Дизайн" },
+            { "id": "full-stack", "label": "Full-Stack Разработка" },
+            { "id": "mvp-launch", "label": "Запуск MVP" },
+            { "id": "scaling", "label": "Масштабирование" },
+            { "id": "other", "label": "Другое" }
+        ],
+        "badget": "Мой бюджет...",
+        "badgetList": [
+            "до $10k",
+            "$10-20k",
+            "$20-50k",
+            "> $50k"
+        ],
+        "send": "Отправить",
+        "or": "или",
+        "sendEmail": "Написать на Email",
+        "telegram": "Связаться в Telegram"
     }
 }
