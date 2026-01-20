@@ -378,6 +378,8 @@
             position: relative;
             transition: margin-left 0.3s ease-out;
             display: inline-block;
+            overflow: hidden;
+            line-height: 60px;
             span {
                 display: inline-block;
                 transition: transform 0.3s ease-out, opacity 0.2s ease-out;
@@ -478,5 +480,9 @@
             font-size: 90px;
             line-height: 80px;
         }
+    }
+
+    .footerHoverPartLink {
+        line-height: 90px;    
     }
 }
