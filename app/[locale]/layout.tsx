@@ -8,15 +8,18 @@ import Header from "../components/core/header/Header";
 import ContactForm from "../components/contactForm/ContactForm";
 import Footer from "../components/core/footer/Footer";
 import GradualBlur from "../components/gradualBlur/GradualBlur";
+import {DEV, PROD_DOMAIN, STAGE_DOMAIN } from "../config/constants";
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/free-mode';
 import "@/app/styles/global.scss";
 
+const domain = DEV ? STAGE_DOMAIN : PROD_DOMAIN;
 
-
-
+export const metadata = {
+  metadataBase: new URL(domain),
+};
 
 // export const metadata: Metadata = {
 //   title: {
@@ -76,14 +79,21 @@ export async function generateMetadata({params}:{params: Promise<{locale: string
       siteName: "MaxDev",
       title: title,
       description: desription,
-      images: [],
+      images: [
+        {
+          url: "/images/maxdev.png",
+          width: 1200,
+          height: 630,
+          alt: "MaxDe preview",  
+        }
+      ],
       locale: locale === 'ru' ? 'ru_RU' : 'en_US'
     },
     twitter: {
       card: "summary_large_image",  
       title: title,
       description: desription,
-      images: []
+      images: ['/images/maxdev.png']
     }
   };
 }
