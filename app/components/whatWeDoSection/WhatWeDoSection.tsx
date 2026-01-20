@@ -19,7 +19,7 @@ export default function WhatWeDoSection () {
 
     return (
         <section id="services" className={clsx(styles.whatWeDoSection, addClass)}>
-            <h2 className="flex--center"><span className="subtitle pusle-dot--shadow pusle-dot pusle-dot--inner-pulse-colored">{t('subTitle')}</span></h2>
+            <h2 className="flex--center"><span className="subtitle pusle-dot--shadow pusle-dot">{t('subTitle')}</span></h2>
             {titleSectionProps.map((item) => {
                 return <WhatWeDoTitleSection key={crypto.randomUUID()} title={item.title} lineText={item.lineText}/>
             })}  
