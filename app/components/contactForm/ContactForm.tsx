@@ -1,13 +1,32 @@
 'use client';
 import { useContactFormStore } from '@/app/stores/useContactFormStore';
+import { useEffect } from 'react';
+import { useActionState } from 'react';
+import { useFormStatus } from 'react-dom';
+import { sendContact } from '@/app/server-actions/contact';
 import clsx from 'clsx';
-import styles from './ContactForm.module.scss';
 import SButton from '../core/buttons/sButton';
 import SButtonClose from '../core/buttons/sButtonClose';
 import Checkbox from './checkbox/CheckBox';
 import RadioGroup from './radioButton/RadioWrapper';
 import { MainLink, TelegramLink } from '../mailLink/MailLink';
 import { useTranslations } from 'next-intl';
+import styles from './ContactForm.module.scss';
+
+
+
+function SubmitButton({ text }: { text: string }) {
+  const { pending } = useFormStatus(); // pending — только внутри form action :contentReference[oaicite:9]{index=9}
+  
+  return (
+    <SButton
+      text={pending ? 'Sending…' : text}
+      icon={true}
+      type="submit"
+      disabled={pending}
+    />
+  );
+}
 
 export default function ContactForm () {
     const isOpen = useContactFormStore((s) => s.isOpen);
@@ -17,6 +36,12 @@ export default function ContactForm () {
     const interestedList = t.raw('interestedList') as {id: string;label: string;}[];
     const badgetList = t.raw('badgetList') as string[];
     
+    const [state, formAction] = useActionState(sendContact, null);
+
+    useEffect(() => {
+        // if (state?.ok) close();
+    }, [state, close]);
+
 return (
     <div className={clsx(styles.overlay, isOpen && styles.active)} aria-hidden={!isOpen}>
         <div className={styles.closeOverlay} onClick={close}></div>
@@ -30,7 +55,7 @@ return (
                         {t('text')}
                     </p>
                 </div>
-                <form className={styles.form}>
+                <form className={styles.form} action={formAction}>
                     <div className="field-wrapper">
                         <label className="s-label" htmlFor="name">
                             <span className="icon svg">
@@ -54,7 +79,7 @@ return (
                             {t("name")}*
                         </label>
                         <div className="s-input">
-                            <input type="text" placeholder={t("namePlaceholder")} id="name" required/>
+                            <input type="text" placeholder={t("namePlaceholder")} id="name" name="name" required/>
                         </div>
                     </div>
                     <div className="field-wrapper">
@@ -81,7 +106,7 @@ return (
                             Email*
                         </label>
                         <div className="s-input">
-                            <input type="text" placeholder="example@gmail.com" id="email" required/>
+                            <input type="text" placeholder="example@gmail.com" id="email" name="email" required/>
                         </div>
                     </div>
 
@@ -108,7 +133,7 @@ return (
                             {t("tellUs")}
                         </label>
                         <div className="s-input">
-                            <input type="text" placeholder={t('tellUsPlaceholder')} id="project-desc" />
+                            <input type="text" placeholder={t('tellUsPlaceholder')} id="project-desc" name="message" />
                         </div>
                     </div>
 
@@ -127,7 +152,7 @@ return (
                                 </span>
                                 {t("file")}
                             </div>
-                            <input type="file" />
+                            <input type="file" name="file" />
                         </div>
                     </div>
 
@@ -192,7 +217,7 @@ return (
                         </p> 
 
                         <div className={clsx(styles.contactFormChecboxes, styles.contactFormRadio)}>
-                        <RadioGroup name="my_budget_is" data={
+                        <RadioGroup name="budget" data={
                             [
                                 {
                                     id: 'up-10',
@@ -218,8 +243,20 @@ return (
                         } />
                         </div>
                         <div className={styles.buttonWrap}>
-                        <SButton text={t('send')} icon={true} type="submit"/>
-                        </div>   
+                        <SubmitButton text={t('send')} />
+                        </div>
+
+                        {state && !state.ok && (
+                            <p role="alert" style={{ marginTop: 12 }}>
+                            {state.error}
+                            </p>
+                        )}
+                        {/* {state?.ok && (
+                            <p role="status" style={{ marginTop: 12 }}>
+                            Sent!
+                            </p>
+                        )} */}
+
                     </div>
                 </form>
                 <div className={styles.contactFormGap}>

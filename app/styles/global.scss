@@ -73,6 +73,11 @@ picture {
 	height: 100%;	
 }
 
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .responsive-image {
 	display: block;
 	width: 100%;

@@ -13,7 +13,7 @@ export default function Checkbox ({id = '', label = ''}:CheckboxProp) {
     return (
         <div className={clsx("s-choise-container", checked ? 'active' : '')}>
             <div className={clsx("s-checkbox", checked ? 'active' : '')}>
-                <input type="checkbox" id={id} onChange={(e) => setChecked(e.target.checked)} />
+                <input type="checkbox" id={id} onChange={(e) => setChecked(e.target.checked)} name="interested" value={label} checked={checked}/>
                 <span className="svg">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clipPath="url(#clip0_94_1110)">

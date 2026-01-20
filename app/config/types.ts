@@ -18,6 +18,7 @@ export type SButtonType = {
   className?: string;
   type?: 'button' | 'submit';
   typeLink?: 'normal' | 'link';
+  disabled?: boolean;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 };
 

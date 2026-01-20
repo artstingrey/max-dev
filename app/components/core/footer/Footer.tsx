@@ -33,7 +33,7 @@ export default function Footer() {
                         <div className="subtitle pusle-dot pusle-dot--inner-pulse">{fFooterportfolio("subTitle")}</div>
                         <div className={styles.footerPorfolioPartBottom}>
                             <p>{fFooterportfolio("text")}</p>
-                            <SButton text={fFooterportfolio("linkTex")} url="#how-we-work" icon={true} />
+                            <SButton text={fFooterportfolio("linkTex")} url="#how-we-work" typeLink="link" icon={true} />
                         </div>    
                     </div>
                 </div>

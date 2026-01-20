@@ -11,7 +11,7 @@ type BaseProps = SButtonType & {
   sizeClass?: string;
 };
 
-export default function SButtonBase ({text = '', url = '', icon = false, sizeClass = '', className = '', type = 'button', typeLink = 'normal', onClick}:BaseProps) {
+export default function SButtonBase ({text = '', url = '', icon = false, sizeClass = '', className = '', type = 'button', typeLink = 'normal', onClick, disabled = false}:BaseProps) {
     
     const [isHovered, setIsHovered] = useState(false);
     
@@ -47,7 +47,7 @@ export default function SButtonBase ({text = '', url = '', icon = false, sizeCla
     }
 
     return (
-        <button type={type} {...buttonProps}>
+        <button type={type} disabled={disabled} aria-disabled={disabled ? true : undefined} {...buttonProps}>
             <SButtonInner text={text} icon={icon} isHovered={isHovered} />
         </button>
     );
