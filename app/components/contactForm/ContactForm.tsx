@@ -239,6 +239,11 @@ return (
                                     label: badgetList[3],
                                     value: badgetList[3]
                                 },
+                                {
+                                    id: 'help',
+                                    label: badgetList[4],
+                                    value: badgetList[4]
+                                },
                             ]
                         } />
                         </div>

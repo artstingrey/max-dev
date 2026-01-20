@@ -51,7 +51,7 @@
 .trustedLogosWrapper {
     display: flex;
     flex-wrap: wrap;
-    column-gap: 4px;
+    column-gap: 2px;
     row-gap: 2px;
     margin-top: 24px;
     justify-content: center;
@@ -95,27 +95,27 @@
         color: $color-white;
         margin: 0;
     }
-}
 
-.author {
-    margin-top: 48px;
-    display: flex;
-    align-items: center;
-    column-gap: 12px;
+    .author {
+        margin-top: 48px;
+        display: flex;
+        align-items: center;
+        column-gap: 12px;
 
-    p {
-        font-size: 14px;
-        line-height: 16px;
-        text-transform: uppercase;
-        color: $color-white;
-        margin: 0;
+        p {
+            font-size: 14px;
+            line-height: 16px;
+            text-transform: uppercase;
+            color: $color-white;
+            margin: 0;
+        }
+
+        .authorText {
+            margin-top: 2px;
+            color: $color-grey-60;
+        }
+
     }
-
-    .authorText {
-        margin-top: 2px;
-        color: $color-grey-60;
-    }
-
 }
 
 .itemImage {
@@ -186,17 +186,18 @@
             font-size: 18px;
             line-height: 20px;
         }
-    }
-
-    .author {
-        p {
-            font-size: 16px;
-            line-height: 18px;
-        }   
         
-        .authorText {
-            margin-top: 4px;
+        .author {
+            p {
+                font-size: 16px;
+                line-height: 18px;
+            }   
+            
+            .authorText {
+                margin-top: 4px;
+            }
         }
+
     }
 
     .trustPilot {
@@ -225,10 +226,10 @@
             font-size: 20px;
             line-height: 22px;
         }
-    }
-
-    .author {
-        margin-top: 64px;
+        
+        .author {
+            margin-top: 64px;
+        }
     }
 }
 

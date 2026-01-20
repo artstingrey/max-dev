@@ -297,7 +297,8 @@
             "up to $10k",
             "$10-20k",
             "$20-50k",
-            "> $50k"
+            "> $50k",
+            "Help me estimate"
         ],
         "send": "Send",
         "or": "or",

@@ -1256,6 +1256,10 @@ button:disabled {
 	.screen-section-fixed-h {
 		height: 550px;
 	}
+
+	.shadow-section-desctop {
+		mask-image: linear-gradient(to right,transparent 0,black 350px,black calc(100% - 350px),transparent 100%);
+	}
 }
 
 @media only screen and (min-width: $break-point-medium-large) {
@@ -1308,6 +1312,10 @@ button:disabled {
 
 	.screen-section-fixed-h {
 		height: 750px;
+	}
+
+	.shadow-section-desctop {
+		mask-image: linear-gradient(to right,transparent 0,black 766px,black calc(100% - 766px),transparent 100%);
 	}
 }
 

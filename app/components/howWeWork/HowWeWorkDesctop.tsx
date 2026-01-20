@@ -44,7 +44,7 @@ export default function HowWeworkDesctop ({items}:HowWeWorkProps) {
     }, []);
 
 
-    const MAX_SHIFT = 60;
+    const MAX_SHIFT = 120;
     const STEP = 10;
 
     return (
