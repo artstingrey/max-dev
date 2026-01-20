@@ -47,7 +47,7 @@ export default function About () {
 
                         <div className={styles.circleContent}>
                             <div className={clsx(styles.icon,'svg')}>
-                               <BodymovinPlayer path='/json/People.json' />
+                               <BodymovinPlayer path='/json/People.json' speed={60} />
                             </div>
                             <p>{t('about-item-1')}</p>
                         </div>

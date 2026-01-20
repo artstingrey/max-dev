@@ -9,12 +9,23 @@
         letter-spacing: -2px;
         margin: 0;
 
-        div {
+        > div {
             display: inline-block;
             width: 40px;
             height: 40px;
             position: relative;
             margin-left: 20px;
+            overflow: hidden;
+
+            > div {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+
+                width: 70px;
+                height: 70px;
+            }
         }
     }
 }
@@ -138,10 +149,15 @@
         padding-bottom: $main-gap-n;
 
         h2 {
-            div {
+            > div {
                 width: 50px;
                 height: 50px;
                 margin-left: 10px;
+
+                > div {
+                    width: 100px;
+                    height: 100px;
+                }
             }
         }
     }
@@ -215,9 +231,14 @@
 @media only screen and (min-width: $break-point-full-style) {
     .trustPilotSection {
         h2 {
-            div {
+            > div {
                 width: 70px;
                 height: 70px;
+
+                > div {
+                    width: 120px;
+                    height: 120px;
+                }
             }
         }
 
