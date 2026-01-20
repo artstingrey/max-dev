@@ -38,7 +38,7 @@
     padding: 40px 20px;
     background: $color-black;
     border: 1px solid #1D1D1C;
-    max-height: 100vh;
+    max-height: calc(100vh + 80px);
     overflow: auto;
 
     h2 {
@@ -118,6 +118,7 @@
 
     .contactFormWrapper {
         padding: 60px 40px;
+        max-height: calc(100vh + 120px);
     }
 
     .contactFormContent {
@@ -169,12 +170,14 @@
 
 @media only screen and (min-width: $break-point-normal) {
     .contactFormWrapper {
-        padding: 60px 40px 80px 60px; 
+        padding: 60px 40px 80px 60px;
+        max-height: calc(100vh + 140px); 
     }
 }
 
 @media only screen and (min-width: $break-point-full-style) {
     .contactFormWrapper {
-        padding: 70px 40px 120px 70px; 
+        padding: 70px 40px 120px 70px;
+        max-height: calc(100vh + 190px); 
     }
 }
