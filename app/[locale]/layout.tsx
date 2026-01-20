@@ -17,10 +17,6 @@ import "@/app/styles/global.scss";
 
 const domain = DEV ? STAGE_DOMAIN : PROD_DOMAIN;
 
-export const metadata = {
-  metadataBase: new URL(domain),
-};
-
 // export const metadata: Metadata = {
 //   title: {
 //     default: "MaxDev | MVP Development for Startups. From Idea to Launch.",
@@ -68,6 +64,7 @@ export async function generateMetadata({params}:{params: Promise<{locale: string
   const desription = t('description');
 
   return {
+    metadataBase: new URL(domain),
     title: {
       default: title,
       template: "MaxDev | %s"
