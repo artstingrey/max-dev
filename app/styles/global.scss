@@ -237,7 +237,15 @@ button:disabled {
 		transition: transform 80ms linear;
 
 	}
+
+	&.section-bg--no-scale {
+		img {
+			transform: translate3d(0, var(--y, 0), 0) scale(1);	
+		}
+	}
 }
+
+
 
 @media (prefers-reduced-motion: reduce) {
   .section-bg img {

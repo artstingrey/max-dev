@@ -63,7 +63,7 @@ export default function FixedSection () {
 
     return (
         <section className={styles.fixedSection} ref={sectionRef}>
-             <picture className={clsx("section-bg", "responsive-image")}>
+             <picture className={clsx("section-bg", "section-bg--no-scale", "responsive-image")}>
                 <source srcSet="/images/section-bg-mob@2x.avif 2x" media="(max-width: 767px)" type="image/avif" />
                 <source srcSet="/images/section-bg-mob@2x.webp 2x" media="(max-width: 767px)" type="image/webp" />
                 <source srcSet="/images/section-bg-mob@2x.jpg 2x" media="(max-width: 767px)" type="image/jpeg" />
