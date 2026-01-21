@@ -39,7 +39,7 @@ export default function Hero () {
 
     return (
         <section className={clsx(styles.hero, addClass)}>
-            {/* <Aurora colorStops={['#ffffff','#eb5107','#0329a8']} blend={1} className={styles.heroAurora} /> */}
+            <Aurora colorStops={['#ffffff','#eb5107','#0329a8']} blend={1} className={styles.heroAurora} />
             <div className={clsx(styles.heroMcontainer,'m-container')}>
                 <div className={styles.heroText}>
                     {t('heroText')}
