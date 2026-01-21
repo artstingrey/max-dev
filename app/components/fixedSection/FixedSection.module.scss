@@ -88,6 +88,7 @@
 
 @media only screen and (min-width: $break-point-full-style) {
     .fixedSection {
+        margin-top: $main-gap-m;
         h2 {
             font-size: 90px;
             line-height: 80px;

@@ -16,7 +16,7 @@ export default function TrustPilotSection () {
 
     return (
         <section className={clsx(styles.trustPilotSection, "trust-pilot-section")}>
-            <h2>{t('title')}
+            <h2><span>{t('title')}</span>
                 <BodymovinPlayer path='/json/Star.json' className="svg" />
             </h2>
             <div className={styles.trustedLogos}>

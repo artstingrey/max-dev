@@ -9,6 +9,10 @@
         letter-spacing: -2px;
         line-height: 44px;
         margin: 0;
+        span {
+            position: relative;
+            z-index: 1;
+        }
 
         > div {
             display: inline-block;
@@ -16,7 +20,6 @@
             height: 40px;
             position: relative;
             margin-left: 20px;
-            overflow: hidden;
 
             > div {
                 position: absolute;
@@ -24,8 +27,9 @@
                 left: 50%;
                 transform: translate(-50%,-50%);
 
-                width: 70px;
-                height: 70px;
+                width: 140px;
+                height: 140px;
+                z-index: 0;
 
                 path {
                     stroke-width: 160px;
@@ -156,13 +160,13 @@
         h2 {
             line-height: 30px;
             > div {
-                width: 50px;
-                height: 50px;
+                width: 40px;
+                height: 40px;
                 margin-left: 10px;
 
                 > div {
-                    width: 100px;
-                    height: 100px;
+                    width: 140px;
+                    height: 140px;
                 }
             }
         }
@@ -238,6 +242,16 @@
         h2 {
             letter-spacing: -3px;
             line-height: 58px;
+            
+            > div {
+                width: 50px;
+                height: 50px;
+
+                > div {
+                    width: 180px;
+                    height: 180px;
+                }
+            }
         }
     }
 }
@@ -252,8 +266,12 @@
                 height: 70px;
 
                 > div {
-                    width: 120px;
-                    height: 120px;
+                    width: 240px;
+                    height: 240px;
+
+                    path {
+                        stroke-width: 130px;
+                    }
                 }
             }
         }
