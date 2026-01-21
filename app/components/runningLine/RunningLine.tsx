@@ -6,23 +6,19 @@ export default function RunningLine () {
     const t = useTranslations('clients');
 
     const logos = [
-        {id: 1, src: "/images/partners/webflow.svg", alt: "Webflow", width: "215px"},
-        {id: 2, src: "/images/partners/webflow.svg", alt: "Webflow", width: "215px"},
-        {id: 3, src: "/images/partners/webflow.svg", alt: "Webflow", width: "215px" },
-        {id: 4, src: "/images/partners/webflow.svg", alt: "Webflow", width: "215px"},
-        {id: 5, src: "/images/partners/webflow.svg", alt: "Webflow", width: "215px" },
+        {id: 1, src: "/images/partners/maxprofit_logo.svg", alt: "maxprofit_logo", width: "212px"},
+        {id: 2, src: "/images/partners/maxswap_logo.svg", alt: "maxswap_logo", width: "188px"},
+        {id: 3, src: "/images/partners/maxwallet_logo.svg", alt: "maxwallet_logo", width: "68px" },
+        {id: 4, src: "/images/partners/maxprofit_logo.svg", alt: "maxprofit_logo", width: "212px"},
+        {id: 5, src: "/images/partners/maxswap_logo.svg", alt: "maxswap_logo", width: "188px"},
+        {id: 6, src: "/images/partners/maxwallet_logo.svg", alt: "maxwallet_logo", width: "68px" },
 
-        {id: 6, src: "/images/partners/webflow.svg", alt: "Webflow", width: "215px"},
-        {id: 7, src: "/images/partners/webflow.svg", alt: "Webflow", width: "215px"},
-        {id: 8, src: "/images/partners/webflow.svg", alt: "Webflow", width: "215px" },
-        {id: 9, src: "/images/partners/webflow.svg", alt: "Webflow", width: "215px"},
-        {id: 10, src: "/images/partners/webflow.svg", alt: "Webflow", width: "215px" },
-
-        // {id: 11, src: "/images/partners/kyrex.svg", alt: "Kyrex", width: "152px"},
-        // {id: 12, src: "/images/partners/visa.svg", alt: "Visa", width: "100px"},
-        // {id: 13, src: "/images/partners/mastercard.svg", alt: "Mastercard", width: "65px" },
-        // {id: 14, src: "/images/partners/simplify-labs.svg", alt: "Simplifylabs", width: "88px"},
-        // {id: 15, src: "/images/partners/chainalysis.svg", alt: "Chainalysis", width: "199px" },
+        {id: 7, src: "/images/partners/maxprofit_logo.svg", alt: "maxprofit_logo", width: "212px"},
+        {id: 8, src: "/images/partners/maxswap_logo.svg", alt: "maxswap_logo", width: "188px"},
+        {id: 9, src: "/images/partners/maxwallet_logo.svg", alt: "maxwallet_logo", width: "68px" },
+        {id: 10, src: "/images/partners/maxprofit_logo.svg", alt: "maxprofit_logo", width: "212px"},
+        {id: 11, src: "/images/partners/maxswap_logo.svg", alt: "maxswap_logo", width: "188px"},
+        {id: 12, src: "/images/partners/maxwallet_logo.svg", alt: "maxwallet_logo", width: "68px" },
     ];
 
     return (
@@ -33,7 +29,7 @@ export default function RunningLine () {
                 <div className="running-line-wrap">
                     <div className={clsx('initial-child-container', styles.runningLineInitial)}>
                         {logos.map((logo) => (
-                            <div key={logo.id} className={clsx('running-line-item')}>
+                            <div key={logo.id} className={clsx('running-line-item', styles.runningLineItem)} style={{width: logo.width}}>
                                 <img
                                     src={logo.src}
                                     alt={logo.alt}
@@ -49,7 +45,7 @@ export default function RunningLine () {
                 <div className="running-line-wrap">
                     <div className={clsx('initial-child-container', styles.runningLineInitial)}>
                         {logos.map((logo) => (
-                            <div key={logo.id} className="running-line-item">
+                            <div key={logo.id} className={clsx('running-line-item', styles.runningLineItem)} style={{width: logo.width}}>
                                 <img
                                     src={logo.src}
                                     alt={logo.alt}

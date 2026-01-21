@@ -12,13 +12,20 @@
 }
 
 .runningLineWrapper {
-    height: 40px;
+    height: 60px;
     margin-top: $main-gap-s;
+}
+
+.runningLineItem {
+    img {
+        max-height: 100%;
+    }
 }
 
 .runningLineInitial {
     padding: 0;
-    column-gap: 18px;
+    column-gap: 60px;
+    padding-left: 60px;
 }
 
 @media only screen and (min-width: $break-point-tablet) {
@@ -47,11 +54,20 @@
     }
 
     .runningLineWrapper {
-        height: 60px;
+        height: 80px;
     }
 
     .runningLineInitial {
         padding: 0;
-        column-gap: 26px;
+        column-gap: 80px;
+        padding-left: 80px;
     }
+}
+
+@media only screen and (min-width: $break-point-full-style) {
+    .runningLineInitial {
+        padding: 0;
+        column-gap: 100px;
+        padding-left: 100px;
+    }    
 }
