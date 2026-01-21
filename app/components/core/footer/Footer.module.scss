@@ -481,8 +481,10 @@
             line-height: 80px;
         }
     }
-
-    .footerHoverPartLink {
-        line-height: 90px;    
+    
+    .footerHoverPart {
+        .footerHoverPartLink {
+            line-height: 92px;    
+        }
     }
 }
