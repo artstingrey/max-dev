@@ -19,7 +19,7 @@
         font-size: 48px;
         font-weight: 600;
         line-height: 38px;
-        letter-spacing: -3px;
+        letter-spacing: -2px;
         text-align: center;
         margin: 0;
     }
@@ -64,7 +64,8 @@
     .titleSection {
         > p {
             font-size: 60px;
-            line-height: 50px;
+            line-height: 46px;
+            letter-spacing: -4px;
         }
 
         &:hover {
@@ -79,7 +80,7 @@
         .titleSection {
             > p {
                 font-size: 60px;
-                line-height: 50px;
+                line-height: 46px;
             }
         }
     }
@@ -89,7 +90,7 @@
     .titleSection {
         > p {
             font-size: 90px;
-            line-height: 80px;
+            line-height: 76px;
         }
     }
 
@@ -97,7 +98,7 @@
         .titleSection {
             > p {
                 font-size: 90px;
-                line-height: 80px;
+                line-height: 76px;
             }
         }
     }
@@ -112,7 +113,7 @@
     .titleSection {
         > p {
             font-size: 132px;
-            line-height: 144px;
+            line-height: 110px;
         }
     }
 
@@ -120,7 +121,7 @@
         .titleSection {
             > p {
                 font-size: 132px;
-                line-height: 144px;
+                line-height: 110px;
             }
         }
     }

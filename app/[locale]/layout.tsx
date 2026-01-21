@@ -1,4 +1,4 @@
-import { tiktokSans } from "../fonts";
+import { tiktokSans, roobert } from "../fonts";
 import type { Metadata } from "next";
 import {NextIntlClientProvider, hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
@@ -111,7 +111,7 @@ export default async function LocaleLayout({children, params}: LayoutProps) {
     notFound();
   }
 
-  const className = `${tiktokSans.variable}` + ' locale-' + locale;
+  const className = `${tiktokSans.variable}` + ` ${roobert.variable}` + ' locale-' + locale;
 
   return (
     <html lang={locale}>

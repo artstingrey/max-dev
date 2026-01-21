@@ -25,3 +25,14 @@ export const tiktokSans = localFont({
     ],
     variable: "--font-tiktok-sans"
 });
+
+export const roobert = localFont({
+    src: [
+        {
+            path: "./../public/fonts/roobert-font-family/RoobertTRIAL-Regular-BF67243fd53fdf2.otf",
+            weight: "400",
+            style: "normal"
+        }
+    ],
+    variable: "--roobert"
+});
