@@ -163,7 +163,7 @@ export default async function LocaleLayout({children, params}: LayoutProps) {
         {children}
         <Footer />
         </NextIntlClientProvider>
-        <GradualBlur
+        {/* <GradualBlur
           target="page"
           position="bottom"
           height="4rem"
@@ -172,7 +172,7 @@ export default async function LocaleLayout({children, params}: LayoutProps) {
           curve="bezier"
           exponential={true}
           opacity={1}
-        />
+        /> */}
       </body>
     </html>
   );

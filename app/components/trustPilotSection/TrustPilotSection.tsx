@@ -103,42 +103,42 @@ export default function TrustPilotSection () {
                     </SwiperSlide>
                     <SwiperSlide className={styles.swiperSlide}>
                         <div className={styles.item}>
-                            <p>&quot;{items[4].text}&quot;</p>
+                            <p>&quot;{items[5].text}&quot;</p>
                             <div className={styles.author}>
                                 <div className={styles.itemImage}>
-                                    <Image src={folder + 'trusted-logo-4.png'} width={100} height={100} alt='Trusted logo' quality={100}/>
+                                    <Image src={folder + 'trusted-logo-5.png'} width={100} height={100} alt='Trusted logo' quality={100}/>
                                 </div>
                                 <div>
-                                    <p className={styles.authorTitle}>{items[4].author}</p>
-                                    <p className={styles.authorText}>{items[4].position}</p>
+                                    <p className={styles.authorTitle}>{items[5].author}</p>
+                                    <p className={styles.authorText}>{items[5].position}</p>
                                 </div>
                             </div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide className={styles.swiperSlide}>
                         <div className={styles.item}>
-                            <p>&quot;{items[4].text}&quot;</p>
+                            <p>&quot;{items[6].text}&quot;</p>
                             <div className={styles.author}>
                                 <div className={styles.itemImage}>
-                                    <Image src={folder + 'trusted-logo-4.png'} width={100} height={100} alt='Trusted logo' quality={100}/>
+                                    <Image src={folder + 'trusted-logo-6.png'} width={100} height={100} alt='Trusted logo' quality={100}/>
                                 </div>
                                 <div>
-                                    <p className={styles.authorTitle}>{items[4].author}</p>
-                                    <p className={styles.authorText}>{items[4].position}</p>
+                                    <p className={styles.authorTitle}>{items[6].author}</p>
+                                    <p className={styles.authorText}>{items[6].position}</p>
                                 </div>
                             </div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide className={styles.swiperSlide}>
                         <div className={styles.item}>
-                            <p>&quot;{items[4].text}&quot;</p>
+                            <p>&quot;{items[7].text}&quot;</p>
                             <div className={styles.author}>
                                 <div className={styles.itemImage}>
-                                    <Image src={folder + 'trusted-logo-4.png'} width={100} height={100} alt='Trusted logo' quality={100}/>
+                                    <Image src={folder + 'trusted-logo-7.png'} width={100} height={100} alt='Trusted logo' quality={100}/>
                                 </div>
                                 <div>
-                                    <p className={styles.authorTitle}>{items[4].author}</p>
-                                    <p className={styles.authorText}>{items[4].position}</p>
+                                    <p className={styles.authorTitle}>{items[7].author}</p>
+                                    <p className={styles.authorText}>{items[7].position}</p>
                                 </div>
                             </div>
                         </div>

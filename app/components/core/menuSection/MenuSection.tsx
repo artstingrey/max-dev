@@ -21,7 +21,6 @@ export default function MenuSection({isActive, onLinkClick, closeMenu}:MenuSecti
                     <div className="menu-section__header">
                         <div className="menu-section__logo">
                             <Link href="/" className="svg"><MobileLogo /></Link>
-                            
                         </div>
                         <SButtonClose onClick={closeMenu} />    
                     </div>
